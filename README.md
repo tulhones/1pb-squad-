@@ -2,7 +2,7 @@
 
 **As maiores mentes do mundo trabalhando para o seu negócio.**
 
-144 agentes IA especializados, prontos para usar diretamente no Claude Code. Sem frameworks, sem dependências, sem complicação.
+150 agentes IA especializados, prontos para usar diretamente no Claude Code. Sem frameworks, sem dependências, sem complicação.
 
 Feito para **profissionais autônomos** — freelancers, consultores, coaches, criadores e qualquer pessoa que toca o próprio negócio sozinha.
 
@@ -22,6 +22,7 @@ Feito para **profissionais autônomos** — freelancers, consultores, coaches, c
 | Design | 8 | UX/UI e design systems (Brad Frost, Dan Mall...) |
 | Hormozi | 16 | Negócios e escala (framework Alex Hormozi) |
 | Movement | 7 | Construção de movimentos e comunidades |
+| Solo | 6 | Estratégia exclusiva para empreendedores solo |
 | Storytelling | 12 | Narrativa e storytelling (Joseph Campbell, Oren Klaff...) |
 | Traffic | 16 | Tráfego pago e mídia (Pedro Sobral, Kasim Aslam...) |
 
@@ -42,18 +43,19 @@ curl -fsSL https://raw.githubusercontent.com/tulhones/1pb-squad-/main/install.sh
 
 ```bash
 git clone https://github.com/tulhones/1pb-squad-.git
-cp -r 1pb-squad/advisory-board ~/.claude/commands/
-cp -r 1pb-squad/brand ~/.claude/commands/
-cp -r 1pb-squad/c-level ~/.claude/commands/
-cp -r 1pb-squad/claude-code ~/.claude/commands/
-cp -r 1pb-squad/copy ~/.claude/commands/
-cp -r 1pb-squad/cybersecurity ~/.claude/commands/
-cp -r 1pb-squad/data ~/.claude/commands/
-cp -r 1pb-squad/design ~/.claude/commands/
-cp -r 1pb-squad/hormozi ~/.claude/commands/
-cp -r 1pb-squad/movement ~/.claude/commands/
-cp -r 1pb-squad/storytelling ~/.claude/commands/
-cp -r 1pb-squad/traffic ~/.claude/commands/
+cp -r 1pb-squad-/advisory-board ~/.claude/commands/
+cp -r 1pb-squad-/brand ~/.claude/commands/
+cp -r 1pb-squad-/c-level ~/.claude/commands/
+cp -r 1pb-squad-/claude-code ~/.claude/commands/
+cp -r 1pb-squad-/copy ~/.claude/commands/
+cp -r 1pb-squad-/cybersecurity ~/.claude/commands/
+cp -r 1pb-squad-/data ~/.claude/commands/
+cp -r 1pb-squad-/design ~/.claude/commands/
+cp -r 1pb-squad-/hormozi ~/.claude/commands/
+cp -r 1pb-squad-/movement ~/.claude/commands/
+cp -r 1pb-squad-/solo ~/.claude/commands/
+cp -r 1pb-squad-/storytelling ~/.claude/commands/
+cp -r 1pb-squad-/traffic ~/.claude/commands/
 ```
 
 ---
@@ -67,8 +69,16 @@ Após a instalação, abra o Claude Code em qualquer projeto e chame os agentes 
 /hormozi:hormozi-offers
 /traffic:pedro-sobral
 /advisory-board:ray-dalio
-/storytelling:joseph-campbell
+/solo:solo-strategist
 ```
+
+Não sabe qual agente usar? Comece pelo Squad Selector:
+
+```
+/squad-selector
+```
+
+Responda 5 perguntas sobre o seu negócio e receba seu time personalizado.
 
 ---
 
