@@ -32,7 +32,7 @@ Feito para **profissionais autônomos** — freelancers, consultores, coaches, c
 ### Opção 1: Script automático (recomendado)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/ohmyjahh/1pb-squad/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/tulhones/1pb-squad-/main/install.sh | bash
 ```
 
 ### Opção 2: Manual
@@ -41,7 +41,7 @@ curl -fsSL https://raw.githubusercontent.com/ohmyjahh/1pb-squad/main/install.sh 
 2. Copie as pastas dos squads para `~/.claude/commands/`:
 
 ```bash
-git clone https://github.com/ohmyjahh/1pb-squad.git
+git clone https://github.com/tulhones/1pb-squad-.git
 cp -r 1pb-squad/advisory-board ~/.claude/commands/
 cp -r 1pb-squad/brand ~/.claude/commands/
 cp -r 1pb-squad/c-level ~/.claude/commands/

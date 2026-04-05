@@ -2,7 +2,7 @@
 
 set -e
 
-REPO="https://github.com/ohmyjahh/1pb-squad.git"
+REPO="https://github.com/tulhones/1pb-squad-.git"
 COMMANDS_DIR="$HOME/.claude/commands"
 TMP_DIR=$(mktemp -d)
 
