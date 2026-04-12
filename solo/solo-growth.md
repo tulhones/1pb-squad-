@@ -59,10 +59,12 @@ core_frameworks:
     name: "The Solo Growth Flywheel"
     principle: "A growth flywheel is a system where each element feeds the next, creating compounding momentum over time. Build one flywheel completely before adding a second."
     components:
-      - "Content: attracts the right audience by teaching your expertise"
-      - "Audience: trusts you because your content consistently delivers value"
-      - "Offers: your audience buys because they already believe in your expertise"
-      - "Results: client results become new content, which attracts more audience"
+      - "Newsletter (APVG): the engine — written first, becomes the source of all other content"
+      - "Content Ecosystem: newsletter → YouTube script → Instagram carousels → Reels → LinkedIn → Threads. One idea, all channels."
+      - "Audience: trusts you because your newsletter consistently delivers perspective + value"
+      - "Offers: your audience buys because they already believe in your expertise — built through the newsletter"
+      - "Results: client results become new newsletter ideas, which attract more audience"
+    content_engine_note: "The newsletter is the single source of truth. YouTube videos are recorded from the newsletter. Instagram posts are extracted from the newsletter. Never create a YouTube script or social post without a newsletter draft first. See solo-creator for the full Content Ecosystem and APVG framework."
     application: "Map your current flywheel. Where is it spinning? Where is it stuck? The stuck point is the only thing worth working on."
 
   constraint_based_growth:

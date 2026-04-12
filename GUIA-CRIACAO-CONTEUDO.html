@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Criação de Conteúdo — @tulhones</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: #fff;
+    color: #1a1a1a;
+    line-height: 1.7;
+  }
+
+  /* COVER */
+  .cover {
+    background: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    page-break-after: always;
+  }
+
+  .cover-eyebrow {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 40px;
+  }
+
+  .cover-title {
+    font-family: 'Georgia', serif;
+    font-size: 52px;
+    font-weight: normal;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    max-width: 700px;
+  }
+
+  .cover-title span {
+    color: #c8f542;
+  }
+
+  .cover-subtitle {
+    font-size: 18px;
+    color: #aaa;
+    max-width: 560px;
+    line-height: 1.6;
+    margin-bottom: 60px;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cover-meta-item {
+    text-align: center;
+  }
+
+  .cover-meta-num {
+    font-family: 'Courier New', monospace;
+    font-size: 32px;
+    color: #c8f542;
+    display: block;
+  }
+
+  .cover-meta-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  /* SECTIONS */
+  .section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 80px 40px;
+    page-break-inside: avoid;
+  }
+
+  .section-divider {
+    border: none;
+    border-top: 1px solid #e8e8e8;
+    margin: 0;
+  }
+
+  /* SECTION HEADERS */
+  .section-number {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    color: #0a0a0a;
+  }
+
+  .section-intro {
+    font-size: 17px;
+    color: #555;
+    max-width: 640px;
+    margin-bottom: 48px;
+    line-height: 1.8;
+  }
+
+  /* CHAPTER HEADER */
+  .chapter-header {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 48px 40px;
+    margin-bottom: 0;
+    page-break-before: always;
+  }
+
+  .chapter-number {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .chapter-title {
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 1.2;
+    color: #fff;
+  }
+
+  .chapter-title span {
+    color: #c8f542;
+  }
+
+  /* CARDS */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .card-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 28px;
+  }
+
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .card-title {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 8px;
+  }
+
+  .card-content {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .card-accent {
+    background: #0a0a0a;
+    color: #fff;
+  }
+
+  .card-accent .card-title {
+    color: #888;
+  }
+
+  .card-accent .card-content {
+    color: #ddd;
+  }
+
+  .card-green {
+    background: #c8f542;
+  }
+
+  .card-green .card-title {
+    color: #4a6010;
+  }
+
+  .card-green .card-content {
+    color: #1a1a1a;
+  }
+
+  /* PILLARS */
+  .pillar {
+    border-left: 4px solid #0a0a0a;
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    background: #fafafa;
+    border-radius: 0 12px 12px 0;
+  }
+
+  .pillar-p1 { border-left-color: #0a0a0a; }
+  .pillar-p2 { border-left-color: #3a7bd5; }
+  .pillar-p3 { border-left-color: #c8f542; border-left-color: #5a9e1e; }
+  .pillar-p4 { border-left-color: #e85d3a; }
+  .pillar-p5 { border-left-color: #9b59b6; }
+
+  .pillar-tag {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 6px;
+  }
+
+  .pillar-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .pillar-desc {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+
+  .pillar-examples {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+
+  .pillar-examples-title {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 10px;
+  }
+
+  .pillar-examples li {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 6px;
+    margin-left: 16px;
+  }
+
+  /* HOOK BLOCKS */
+  .hook-block {
+    background: #0a0a0a;
+    color: #fff;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+  }
+
+  .hook-type {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 12px;
+  }
+
+  .hook-formula {
+    font-size: 18px;
+    color: #c8f542;
+    font-style: italic;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .hook-examples {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.8;
+  }
+
+  .hook-examples span {
+    display: block;
+    padding: 4px 0;
+    border-bottom: 1px solid #1e1e1e;
+  }
+
+  .hook-examples span:last-child {
+    border-bottom: none;
+  }
+
+  /* POST STRUCTURE */
+  .post-step {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 32px;
+    align-items: flex-start;
+  }
+
+  .post-step-num {
+    background: #0a0a0a;
+    color: #c8f542;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .post-step-content {}
+
+  .post-step-label {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 4px;
+  }
+
+  .post-step-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  .post-step-desc {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .post-step-example {
+    background: #f0f5e0;
+    border-left: 3px solid #8ab520;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    color: #3a4a10;
+    font-style: italic;
+  }
+
+  /* TABLE */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 40px;
+    font-size: 14px;
+  }
+
+  th {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td {
+    background: #fafafa;
+  }
+
+  /* QUOTE */
+  .big-quote {
+    font-size: 28px;
+    line-height: 1.4;
+    color: #0a0a0a;
+    border-left: 5px solid #c8f542;
+    padding: 24px 32px;
+    margin: 40px 0;
+    background: #f8f8f8;
+    border-radius: 0 12px 12px 0;
+  }
+
+  .big-quote cite {
+    display: block;
+    font-size: 13px;
+    color: #999;
+    font-style: normal;
+    margin-top: 12px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+  }
+
+  /* VOCAB */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .vocab-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 16px;
+    background: #fafafa;
+    border-radius: 8px;
+  }
+
+  .vocab-word {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    color: #0a0a0a;
+    min-width: 120px;
+  }
+
+  .vocab-def {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+  }
+
+  /* AVOID LIST */
+  .avoid-list {
+    list-style: none;
+    margin: 0 0 40px;
+  }
+
+  .avoid-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+    color: #444;
+  }
+
+  .avoid-list li::before {
+    content: "✗";
+    color: #e85d3a;
+    font-weight: bold;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .do-list {
+    list-style: none;
+    margin: 0 0 40px;
+  }
+
+  .do-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+    color: #444;
+  }
+
+  .do-list li::before {
+    content: "✓";
+    color: #5a9e1e;
+    font-weight: bold;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  /* VISUAL GUIDE */
+  .visual-block {
+    background: #0a0a0a;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 24px;
+    color: #fff;
+  }
+
+  .visual-block-title {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  .color-palette {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .color-swatch {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+  }
+
+  .color-label {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #666;
+    margin-top: 6px;
+    text-align: center;
+  }
+
+  .color-item {
+    text-align: center;
+  }
+
+  /* CAROUSEL GUIDE */
+  .carousel-slide {
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .slide-num {
+    background: #0a0a0a;
+    color: #c8f542;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .slide-info {}
+
+  .slide-label {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #bbb;
+    margin-bottom: 4px;
+  }
+
+  .slide-desc {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .slide-example {
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  /* FREQUENCY TABLE */
+  .freq-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .freq-format {
+    font-weight: bold;
+    font-size: 15px;
+    min-width: 180px;
+  }
+
+  .freq-bar-wrap {
+    flex: 1;
+    background: #f0f0f0;
+    border-radius: 99px;
+    height: 8px;
+    overflow: hidden;
+  }
+
+  .freq-bar {
+    height: 100%;
+    border-radius: 99px;
+    background: #0a0a0a;
+  }
+
+  .freq-pct {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #888;
+    min-width: 40px;
+    text-align: right;
+  }
+
+  /* POSITIONING STATEMENT */
+  .positioning-box {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a2a0a 100%);
+    border-radius: 16px;
+    padding: 48px;
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  .positioning-label {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #666;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .positioning-text {
+    font-size: 28px;
+    color: #fff;
+    line-height: 1.4;
+    max-width: 640px;
+    margin: 0 auto 24px;
+  }
+
+  .positioning-text span {
+    color: #c8f542;
+  }
+
+  .positioning-sub {
+    font-size: 15px;
+    color: #888;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* COMPARISON */
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+  }
+
+  .comparison-left {
+    color: #555;
+    text-align: right;
+  }
+
+  .comparison-vs {
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    color: #ccc;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .comparison-right {
+    color: #0a0a0a;
+    font-weight: bold;
+  }
+
+  /* PRINT */
+  @media print {
+    .chapter-header { page-break-before: always; }
+    .cover { page-break-after: always; }
+    body { font-size: 13px; }
+  }
+
+  @page {
+    margin: 0;
+    size: A4;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">Apex Digital · Conteúdo · 2026</div>
+  <h1 class="cover-title">Guia de Criação<br>de <span>Conteúdo</span></h1>
+  <p class="cover-subtitle">Brand voice, identidade visual, pilares, fórmulas de hook e estrutura de posts para construir autoridade como o Atleta-Operador.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="cover-meta-num">5</span>
+      <div class="cover-meta-label">Pilares</div>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-num">7</span>
+      <div class="cover-meta-label">Fórmulas de Hook</div>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-num">1</span>
+      <div class="cover-meta-label">Personagem</div>
+    </div>
+    <div class="cover-meta-item">
+      <span class="cover-meta-num">∞</span>
+      <div class="cover-meta-label">Ideias</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER 1 HEADER -->
+<div class="chapter-header">
+  <div class="chapter-number">Capítulo 01</div>
+  <h2 class="chapter-title">O <span>Personagem</span><br>& Posicionamento</h2>
+</div>
+
+<!-- SECTION 1: POSICIONAMENTO -->
+<div class="section">
+  <div class="section-number">01 · Quem você é</div>
+  <h2 class="section-title">O Atleta-Operador</h2>
+  <p class="section-intro">Antes de criar qualquer conteúdo, você precisa saber exatamente quem é o personagem que aparece em cada post. Não uma persona falsa — a versão mais clara e intencional de você mesmo.</p>
+
+  <div class="positioning-box">
+    <div class="positioning-label">Posicionamento Central</div>
+    <div class="positioning-text">Eu construo um negócio de <span>uma pessoa</span> com sistemas de IA — e treino como atleta porque acredito que <span>performance é performance</span>, dentro e fora da pista.</div>
+    <div class="positioning-sub">Você não precisa de equipe, investimento ou escritório. Precisa de sistemas, alavancagem e clareza.</div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card card-accent">
+      <div class="card-title">Arquétipo</div>
+      <div class="card-content" style="font-size:18px; line-height:1.5">O Atleta-Operador — alguém que aplica a mentalidade de atleta (disciplina, sistemas, performance mensurável) à construção de um one-person business com IA.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">O que você prova</div>
+      <div class="card-content">Não apenas ensina OPB — você <strong>vive</strong> OPB. Sua empresa é o produto. Sua vida é o case study. Cada post é skin in the game.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Referência visual</div>
+      <div class="card-content">Matt Gray — suave, ao ar livre, consistente. Fotos de corrida como pano de fundo para lições de negócio. Lifestyle integration real.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Referência de conteúdo</div>
+      <div class="card-content">Dan Koe — profundidade filosófica, frameworks que mudam perspectiva, frases citáveis, constrói identidade no leitor.</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:20px; margin-bottom:16px; margin-top:8px">O que te diferencia dos dois</h3>
+
+  <div style="overflow-x:auto">
+    <div class="comparison-row" style="border-top:1px solid #f0f0f0">
+      <div class="comparison-left">Sistemas abstratos, sem IA</div>
+      <div class="comparison-vs">Matt Gray →</div>
+      <div class="comparison-right">Sistemas de IA acionáveis e específicos</div>
+    </div>
+    <div class="comparison-row">
+      <div class="comparison-left">Filosofia sem ferramentas concretas</div>
+      <div class="comparison-vs">Dan Koe →</div>
+      <div class="comparison-right">Filosofia + implementação em 30 min</div>
+    </div>
+    <div class="comparison-row">
+      <div class="comparison-left">Lifestyle de viagem/café</div>
+      <div class="comparison-vs">Ambos →</div>
+      <div class="comparison-right">Identidade atleta-empreendedor (corrida)</div>
+    </div>
+    <div class="comparison-row">
+      <div class="comparison-left">Resultados de médio/longo prazo</div>
+      <div class="comparison-vs">Ambos →</div>
+      <div class="comparison-right">Resultados visíveis em 30-90 dias com IA</div>
+    </div>
+  </div>
+
+  <div class="big-quote">
+    "Treino como atleta porque acredito que disciplina não é um traço de personalidade — é um sistema. E sistemas escalam."
+    <cite>— O tipo de frase que define seu personagem</cite>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- CHAPTER 2 HEADER -->
+<div class="chapter-header">
+  <div class="chapter-number">Capítulo 02</div>
+  <h2 class="chapter-title">Brand <span>Voice</span><br>& Linguagem</h2>
+</div>
+
+<!-- SECTION 2: TOM E VOZ -->
+<div class="section">
+  <div class="section-number">02 · Como você fala</div>
+  <h2 class="section-title">Tom & Linguagem</h2>
+  <p class="section-intro">Seu conteúdo deve soar como uma pessoa real que já fez o que ensina — não um professor teórico, não um guru aspiracional, não um robô de frameworks. Uma voz que provoca, ensina e humaniza ao mesmo tempo.</p>
+
+  <div class="card-grid card-grid-3">
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <div class="card-title">Direto</div>
+      <div class="card-content">Vai direto ao ponto. Sem rodeios, sem introduções longas. A primeira frase já entrega valor ou cria tensão.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔬</div>
+      <div class="card-title">Sistêmico</div>
+      <div class="card-content">Pensa em sistemas e mecanismos. Não dá dicas soltas — mostra a lógica por trás do resultado.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏃</div>
+      <div class="card-title">Com evidência</div>
+      <div class="card-content">Usa dados reais, métricas do produto, resultados do processo. Prova o que ensina com sua própria empresa.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">💡</div>
+      <div class="card-title">Filosófico</div>
+      <div class="card-content">Conecta negócio com vida. Não é só "como ganhar dinheiro" — é "como construir uma vida com propósito e autonomia".</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <div class="card-title">Inclusivo</div>
+      <div class="card-content">Fala com o leitor como parceiro de jornada. "Você" e "a gente" — não pregação de cima para baixo.</div>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Provocador</div>
+      <div class="card-content">Questiona o status quo. Desafia crenças limitantes sobre equipe, escritório, escala. Não tem medo de ser contraintuitivo.</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:20px; margin-bottom:20px; margin-top:8px">Vocabulário de Marca</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:24px">Palavras e frases que aparecem com consistência criam um vocabulário próprio. Use esses termos com frequência — eles viram âncoras de identidade.</p>
+
+  <div class="vocab-grid">
+    <div class="vocab-item">
+      <span class="vocab-word">Sistema</span>
+      <span class="vocab-def">Sempre preferido a "método", "técnica" ou "dica". Tudo que você ensina é um sistema.</span>
+    </div>
+    <div class="vocab-item">
+      <span class="vocab-word">Alavancagem</span>
+      <span class="vocab-def">O oposto de esforço bruto. IA como alavancagem. Conteúdo como alavancagem.</span>
+    </div>
+    <div class="vocab-item">
+      <span class="vocab-word">Agente</span>
+      <span class="vocab-def">Seu produto central. Agentes de IA como membros do time digital.</span>
+    </div>
+    <div class="vocab-item">
+      <span class="vocab-word">Operador Solo</span>
+      <span class="vocab-def">Como você se descreve e como descreve seu cliente ideal. Mais ativo que "solopreneur".</span>
+    </div>
+    <div class="vocab-item">
+      <span class="vocab-word">Flywheel</span>
+      <span class="vocab-def">Sistema que se alimenta sozinho. Conteúdo → audiência → venda → prova → mais conteúdo.</span>
+    </div>
+    <div class="vocab-item">
+      <span class="vocab-word">Compounding</span>
+      <span class="vocab-def">Crescimento que se multiplica. Habilidade + conteúdo + sistema = compounding.</span>
+    </div>
+    <div class="vocab-item">
+      <span class="vocab-word">One-Person Business</span>
+      <span class="vocab-def">Seu nicho. Use com orgulho — é um modelo, não uma limitação.</span>
+    </div>
+    <div class="vocab-item">
+      <span class="vocab-word">Skin in the Game</span>
+      <span class="vocab-def">Você pratica o que ensina. Sua empresa é o case. Usa em português: "estou jogando junto".</span>
+    </div>
+    <div class="vocab-item">
+      <span class="vocab-word">Performance</span>
+      <span class="vocab-def">Palavra ponte entre corrida e negócios. Usada nas duas esferas intencionalmente.</span>
+    </div>
+    <div class="vocab-item">
+      <span class="vocab-word">Squad</span>
+      <span class="vocab-def">Seu produto (1PB Squad). Mas também: time de agentes de IA que trabalham para você.</span>
+    </div>
+  </div>
+
+  <h3 style="font-size:20px; margin-bottom:20px; margin-top:8px">Frases Citáveis de Marca</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:20px">Frases que poderiam ser impressas em pôster. Crie variações dessas — elas viram sua assinatura.</p>
+
+  <div class="hook-block">
+    <div class="hook-type">Frases Citáveis — use e varie</div>
+    <div class="hook-formula">"Você não precisa de equipe. Você precisa de sistemas melhores."</div>
+    <div class="hook-examples">
+      <span>"Um atleta não pula treino porque está sem inspiração. Um operador tampouuco."</span>
+      <span>"Disciplina não é força de vontade — é arquitetura. Monte o sistema certo e ele corre sozinho."</span>
+      <span>"IA não substitui você. IA substitui a versão de você que trabalhava 12 horas por dia."</span>
+      <span>"Você não escala com mais horas. Você escala com mais alavancagem."</span>
+      <span>"Construa uma empresa que funciona enquanto você corre."</span>
+      <span>"O melhor momento para automatizar foi ontem. O segundo melhor é agora."</span>
+    </div>
+  </div>
+
+  <h3 style="font-size:20px; margin-bottom:16px; margin-top:32px">O que FAZER no tom</h3>
+  <ul class="do-list">
+    <li>Começar com a tensão ou a promessa — nunca com "Olá, hoje vou falar sobre..."</li>
+    <li>Usar números específicos: "12 minutos", "3 agentes", "R$297" — não "rápido" ou "barato"</li>
+    <li>Conectar o post a uma crença maior: negócio + vida + autonomia</li>
+    <li>Mostrar o processo, não só o resultado (bastidores vendem)</li>
+    <li>Usar analogias de corrida/atleta aplicadas a negócio</li>
+    <li>Terminar com uma pergunta ou frase que fica na cabeça</li>
+  </ul>
+
+  <h3 style="font-size:20px; margin-bottom:16px; margin-top:8px">O que EVITAR</h3>
+  <ul class="avoid-list">
+    <li>Frases genéricas de motivação: "acredite em você", "nunca desista", "o sucesso é uma escolha"</li>
+    <li>Tom de guru distante: "quando você chegar no meu nível..." ou comparações deprecativas</li>
+    <li>Jargão excessivo em inglês sem tradução ou contexto</li>
+    <li>Posts sobre IA sem aplicação concreta: "IA vai mudar o mundo" sem mostrar como</li>
+    <li>Conteúdo sobre tendências sem ponto de vista próprio</li>
+    <li>Resumos de livros sem sua perspectiva e aplicação real</li>
+    <li>Perguntas de engajamento vazias: "você concorda? comenta aqui!"</li>
+  </ul>
+</div>
+
+<hr class="section-divider">
+
+<!-- CHAPTER 3 HEADER -->
+<div class="chapter-header">
+  <div class="chapter-number">Capítulo 03</div>
+  <h2 class="chapter-title">Identidade <span>Visual</span></h2>
+</div>
+
+<!-- SECTION 3: VISUAL -->
+<div class="section">
+  <div class="section-number">03 · Como você aparece</div>
+  <h2 class="section-title">Estética & Visual</h2>
+  <p class="section-intro">Identidade visual não é só design — é reconhecimento instantâneo. Quando alguém vê seu post sem ver o nome, deve saber que é seu. Matt Gray levou 18 meses para construir isso. Você começa já com o sistema definido.</p>
+
+  <div class="visual-block">
+    <div class="visual-block-title">Paleta de Cores</div>
+    <div style="display:flex; gap:20px; flex-wrap:wrap">
+      <div class="color-item">
+        <div class="color-swatch" style="background:#0a0a0a"></div>
+        <div class="color-label">#0a0a0a<br>Preto Fundo</div>
+      </div>
+      <div class="color-item">
+        <div class="color-swatch" style="background:#ffffff; border:1px solid #333"></div>
+        <div class="color-label">#ffffff<br>Branco Base</div>
+      </div>
+      <div class="color-item">
+        <div class="color-swatch" style="background:#c8f542"></div>
+        <div class="color-label">#c8f542<br>Verde Destaque</div>
+      </div>
+      <div class="color-item">
+        <div class="color-swatch" style="background:#f5f2ec"></div>
+        <div class="color-label">#f5f2ec<br>Creme Slide</div>
+      </div>
+      <div class="color-item">
+        <div class="color-swatch" style="background:#2d5016"></div>
+        <div class="color-label">#2d5016<br>Verde Escuro</div>
+      </div>
+      <div class="color-item">
+        <div class="color-swatch" style="background:#8ab520"></div>
+        <div class="color-label">#8ab520<br>Verde Médio</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-title">Tipografia</div>
+      <div class="card-content">
+        <strong>Títulos:</strong> Sans-serif bold, limpa (Inter, DM Sans ou Helvetica Neue)<br><br>
+        <strong>Corpo:</strong> Regular, espaçamento generoso<br><br>
+        <strong>Destaques/códigos:</strong> Courier New ou JetBrains Mono<br><br>
+        <strong>Regra:</strong> Nunca mais de 2 fontes no mesmo post.
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Estilo de Foto</div>
+      <div class="card-content">
+        <strong>Pano de fundo principal:</strong> Fotos de corrida ao ar livre (luz natural, verde, espaço aberto)<br><br>
+        <strong>Complementar:</strong> Setup de trabalho limpo e minimalista, caderno + laptop<br><br>
+        <strong>Evitar:</strong> Fotos em escritórios genéricos, fundos urbanos poluídos, selfies em espelho
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:20px; margin-bottom:20px; margin-top:8px">Tipos de Imagem por Formato</h3>
+
+  <table>
+    <tr>
+      <th>Formato</th>
+      <th>Tipo de imagem</th>
+      <th>Objetivo</th>
+    </tr>
+    <tr>
+      <td><strong>Carrossel capa</strong></td>
+      <td>Texto bold sobre fundo escuro ou creme — sem foto de fundo</td>
+      <td>Parar o scroll com o hook</td>
+    </tr>
+    <tr>
+      <td><strong>Carrossel slides</strong></td>
+      <td>Fundo creme/branco, texto grande, ícone ou número em destaque verde</td>
+      <td>Manter leitura e gerar saves</td>
+    </tr>
+    <tr>
+      <td><strong>Reel thumbnail</strong></td>
+      <td>Foto sua correndo ou trabalhando com texto sobreposto em bold</td>
+      <td>Clique no reel</td>
+    </tr>
+    <tr>
+      <td><strong>Post pessoal</strong></td>
+      <td>Foto real sua (corrida, pós-treino, setup de trabalho) — qualidade média ok</td>
+      <td>Humanizar e criar conexão</td>
+    </tr>
+    <tr>
+      <td><strong>Quote estático</strong></td>
+      <td>Fundo preto, texto branco centralizado, verde nos destaques</td>
+      <td>Compartilhamento e save</td>
+    </tr>
+  </table>
+
+  <h3 style="font-size:20px; margin-bottom:16px">Regras de Consistência Visual</h3>
+  <ul class="do-list">
+    <li>Mesmo template de carrossel em todos os posts — variação só no conteúdo</li>
+    <li>Mesma paleta de cores em tudo — o feed deve parecer um produto coeso</li>
+    <li>Fotos com tom de cor semelhante — usar preset Lightroom consistente</li>
+    <li>Texto em carrosséis sempre alinhado à esquerda ou centralizado — não misturar</li>
+    <li>Espaço em branco generoso — slides não lotados de texto</li>
+    <li>Máximo 40 palavras por slide em carrossel</li>
+  </ul>
+</div>
+
+<hr class="section-divider">
+
+<!-- CHAPTER 4 HEADER -->
+<div class="chapter-header">
+  <div class="chapter-number">Capítulo 04</div>
+  <h2 class="chapter-title">Os 5 <span>Pilares</span><br>de Conteúdo</h2>
+</div>
+
+<!-- SECTION 4: PILARES -->
+<div class="section">
+  <div class="section-number">04 · O que você posta</div>
+  <h2 class="section-title">Pilares de Conteúdo</h2>
+  <p class="section-intro">Cada post que você cria pertence a um dos 5 pilares. Os pilares garantem variedade sem perder foco — e cada um serve a um objetivo diferente no funil. Nunca fique mais de 2 posts seguidos no mesmo pilar.</p>
+
+  <table style="margin-bottom:40px">
+    <tr>
+      <th>Pilar</th>
+      <th>% do conteúdo</th>
+      <th>Objetivo</th>
+      <th>Funil</th>
+    </tr>
+    <tr>
+      <td><strong>1 · Filosofia OPB</strong></td>
+      <td>25%</td>
+      <td>Autoridade + identidade no leitor</td>
+      <td>ToFu</td>
+    </tr>
+    <tr>
+      <td><strong>2 · Sistemas de IA</strong></td>
+      <td>30%</td>
+      <td>Autoridade + lead gerado</td>
+      <td>ToFu / MoFu</td>
+    </tr>
+    <tr>
+      <td><strong>3 · Performance Pessoal</strong></td>
+      <td>20%</td>
+      <td>Humanização + alcance</td>
+      <td>ToFu</td>
+    </tr>
+    <tr>
+      <td><strong>4 · Prova & Processo</strong></td>
+      <td>15%</td>
+      <td>Confiança + conversão</td>
+      <td>MoFu / BoFu</td>
+    </tr>
+    <tr>
+      <td><strong>5 · Comunidade & Conversão</strong></td>
+      <td>10%</td>
+      <td>Engajamento + venda</td>
+      <td>BoFu</td>
+    </tr>
+  </table>
+
+  <!-- PILAR 1 -->
+  <div class="pillar pillar-p1">
+    <div class="pillar-tag">Pilar 01 · 25% · ToFu</div>
+    <div class="pillar-name">Filosofia do One-Person Business</div>
+    <div class="pillar-desc">
+      Conteúdo que desafia crenças, provoca reflexão e constrói identidade. O leitor sai sentindo que pensa diferente. Inspirado em Dan Koe — profundo, citável, conecta negócio com vida. Este pilar atrai as pessoas certas e repele as erradas (o que é ótimo).
+    </div>
+    <div class="pillar-examples">
+      <div class="pillar-examples-title">Exemplos de temas</div>
+      <ul>
+        <li>Por que a maioria das pessoas nunca vai ter um negócio próprio de verdade</li>
+        <li>A diferença entre trabalhar no negócio e trabalhar pelo negócio</li>
+        <li>Por que ter equipe cedo é um erro para solopreneurs</li>
+        <li>O que a corrida de longa distância me ensinou sobre construir um negócio</li>
+        <li>Autonomia não é um privilégio — é uma habilidade que se constrói</li>
+        <li>Por que você precisa de clareza antes de precisar de clientes</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PILAR 2 -->
+  <div class="pillar pillar-p2">
+    <div class="pillar-tag">Pilar 02 · 30% · ToFu / MoFu</div>
+    <div class="pillar-name">Sistemas de IA na Prática</div>
+    <div class="pillar-desc">
+      Seu pilar mais diferenciado e o de maior crescimento. Conteúdo acionável que mostra como usar agentes de IA para trabalhar menos e produzir mais. Inspirado em Matt Gray — sistemas específicos, frameworks numerados, resultado mensurável. Este pilar gera saves e leads.
+    </div>
+    <div class="pillar-examples">
+      <div class="pillar-examples-title">Exemplos de temas</div>
+      <ul>
+        <li>Os 5 agentes de IA que todo solopreneur deveria ter agora</li>
+        <li>Como criei 30 posts em 2 horas usando um agente de conteúdo</li>
+        <li>O sistema de IA que substituiu meu copywriter</li>
+        <li>Passo a passo: como ativei meu primeiro agente de IA em 15 minutos</li>
+        <li>3 fluxos de trabalho de IA que uso todo dia no meu negócio</li>
+        <li>Como um agente de IA cuida do meu atendimento enquanto eu corro</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PILAR 3 -->
+  <div class="pillar pillar-p3">
+    <div class="pillar-tag">Pilar 03 · 20% · ToFu</div>
+    <div class="pillar-name">Performance Pessoal (Atleta-Operador)</div>
+    <div class="pillar-desc">
+      O que nenhum dos seus concorrentes faz. Conecta sua vida como atleta com sua vida como empreendedor. Humaniza seu personagem, gera alcance orgânico e cria o diferencial visual do feed. Posts com foto sua correndo ou pós-treino com uma lição de negócio.
+    </div>
+    <div class="pillar-examples">
+      <div class="pillar-examples-title">Exemplos de temas</div>
+      <ul>
+        <li>O que 5km de manhã me ensinou sobre produtividade</li>
+        <li>Atletas e empreendedores têm o mesmo problema: consistência sem motivação</li>
+        <li>Minha rotina das 6h: quando o negócio começa antes de abrir o computador</li>
+        <li>Por que trato meus sistemas de IA como treinos — progressão, não perfeição</li>
+        <li>Semana 1 construindo em público: o que funcionou e o que falhou</li>
+        <li>Como a mentalidade de maratona mudou como eu penso em crescimento</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PILAR 4 -->
+  <div class="pillar pillar-p4">
+    <div class="pillar-tag">Pilar 04 · 15% · MoFu / BoFu</div>
+    <div class="pillar-name">Prova & Bastidores do Processo</div>
+    <div class="pillar-desc">
+      Mostra o que acontece por trás — o processo real, os números reais, os erros reais. Conteúdo de building in public. Gera confiança porque prova skin in the game. Não precisa de resultados grandiosos — resultados honestos são mais poderosos.
+    </div>
+    <div class="pillar-examples">
+      <div class="pillar-examples-title">Exemplos de temas</div>
+      <ul>
+        <li>Mês 1 com o 1PB Squad: o que aprendi lançando um produto de IA</li>
+        <li>Esse carrossel me trouxe X seguidores — aqui está a estrutura exata</li>
+        <li>Errei aqui: o que não fazer ao ativar agentes de IA pela primeira vez</li>
+        <li>Minha primeira venda do 1PB Squad e o que eu pensei quando aconteceu</li>
+        <li>O sistema que uso para criar conteúdo em 2 horas por semana</li>
+        <li>Receita e aprendizados do mês — transparência total</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PILAR 5 -->
+  <div class="pillar pillar-p5">
+    <div class="pillar-tag">Pilar 05 · 10% · BoFu</div>
+    <div class="pillar-name">Comunidade & Conversão</div>
+    <div class="pillar-desc">
+      Posts que ativam a audiência e direcionam para ofertas ou lead magnets. Nunca aggressivamente comercial — sempre baseado em valor. Usa o ManyChat "comment X para receber Y" para converter engajamento em leads.
+    </div>
+    <div class="pillar-examples">
+      <div class="pillar-examples-title">Exemplos de temas</div>
+      <ul>
+        <li>Comenta SQUAD e te mando o guia de ativação dos 150 agentes</li>
+        <li>Uma pergunta: qual é o maior gargalo do seu negócio hoje?</li>
+        <li>Quem quer a planilha de agentes por situação? Comenta SIM</li>
+        <li>Estou montando um grupo de solopreneurs usando IA — interessado?</li>
+        <li>O que você gostaria de automatizar primeiro no seu negócio?</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- CHAPTER 5 HEADER -->
+<div class="chapter-header">
+  <div class="chapter-number">Capítulo 05</div>
+  <h2 class="chapter-title">Fórmulas de <span>Hook</span></h2>
+</div>
+
+<!-- SECTION 5: HOOKS -->
+<div class="section">
+  <div class="section-number">05 · Como você abre</div>
+  <h2 class="section-title">As 7 Fórmulas de Hook</h2>
+  <p class="section-intro">80% do resultado do seu post depende das primeiras palavras. O hook é a porta de entrada. Se ele falhar, o resto não importa. Use estas 7 fórmulas como base — adapte para seu contexto específico.</p>
+
+  <div class="hook-block">
+    <div class="hook-type">Fórmula 01 · Paradoxo + Resultado</div>
+    <div class="hook-formula">"[Menos/Sem X] = [Mais Y]"</div>
+    <div class="hook-examples">
+      <span>"Sem equipe, sem escritório, sem investimento. Faturei mais do que quando tinha os três."</span>
+      <span>"Trabalho menos de 4 horas por dia e produzo mais do que a maioria produz em 40."</span>
+      <span>"Quanto menos ferramentas você usa, mais resultado você tem. Aqui está o porquê:"</span>
+    </div>
+  </div>
+
+  <div class="hook-block">
+    <div class="hook-type">Fórmula 02 · Número + Resultado Específico</div>
+    <div class="hook-formula">"[Número] [coisa] que [resultado específico e crível]"</div>
+    <div class="hook-examples">
+      <span>"5 agentes de IA que uso toda semana para rodar meu negócio sozinho."</span>
+      <span>"3 sistemas que aprendi em corrida e apliquei direto no meu OPB."</span>
+      <span>"150 agentes de IA. 13 áreas do negócio. 1 pessoa."</span>
+    </div>
+  </div>
+
+  <div class="hook-block">
+    <div class="hook-type">Fórmula 03 · Erro Comum + Verdade Contraintuitiva</div>
+    <div class="hook-formula">"A maioria [erro que o público comete]. O que realmente funciona é [contraintuitivo]."</div>
+    <div class="hook-examples">
+      <span>"A maioria dos solopreneurs tenta contratar antes de automatizar. É o caminho mais caro."</span>
+      <span>"A maioria acha que precisa de mais conteúdo. O que precisa é de um sistema de repropósito."</span>
+      <span>"A maioria usa IA para substituir esforço. Os melhores usam IA para multiplicar alavancagem."</span>
+    </div>
+  </div>
+
+  <div class="hook-block">
+    <div class="hook-type">Fórmula 04 · Declaração Filosófica Provocadora</div>
+    <div class="hook-formula">"[Crença do público] está errada. [Sua perspectiva] é o que muda o jogo."</div>
+    <div class="hook-examples">
+      <span>"Você não precisa de equipe para escalar. Você precisa de sistemas melhores."</span>
+      <span>"Disciplina não é força de vontade. É arquitetura. E arquitetura se projeta."</span>
+      <span>"O maior erro que você pode cometer em 2026 é construir um negócio como se fosse 2015."</span>
+    </div>
+  </div>
+
+  <div class="hook-block">
+    <div class="hook-type">Fórmula 05 · Analogia Atleta → Negócio</div>
+    <div class="hook-formula">"O que [situação atlética] me ensinou sobre [situação de negócio]."</div>
+    <div class="hook-examples">
+      <span>"Correr 21km me ensinou mais sobre gestão de energia do que qualquer livro de produtividade."</span>
+      <span>"Atletas não esperam motivação para treinar. Operadores também não deveriam."</span>
+      <span>"Na corrida, ritmo bate sprint. Em negócios, sistema bate esforço."</span>
+    </div>
+  </div>
+
+  <div class="hook-block">
+    <div class="hook-type">Fórmula 06 · Bastidor / Building in Public</div>
+    <div class="hook-formula">"[O que aconteceu hoje/essa semana] + [o que aprendi com isso]"</div>
+    <div class="hook-examples">
+      <span>"Hoje ativei meu agente de copywriting pela primeira vez. Aqui está o que aconteceu:"</span>
+      <span>"Semana 2 construindo em público. Isso funcionou. Isso não funcionou. Isso me surpreendeu."</span>
+      <span>"Meu primeiro carrossel com 1.000 saves. A estrutura exata que usei:"</span>
+    </div>
+  </div>
+
+  <div class="hook-block">
+    <div class="hook-type">Fórmula 07 · Pergunta + Promessa de Resposta</div>
+    <div class="hook-formula">"[Pergunta que o público já se fez] + Resposta [número] de passos / [tempo específico]"</div>
+    <div class="hook-examples">
+      <span>"Como criar 30 posts em 2 horas? Aqui está o sistema exato:"</span>
+      <span>"Quer rodar um negócio sozinho sem trabalhar 12h por dia? São 3 sistemas. Te mostro:"</span>
+      <span>"Por onde começa quem quer montar um one-person business com IA em 2026? Por aqui:"</span>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- CHAPTER 6 HEADER -->
+<div class="chapter-header">
+  <div class="chapter-number">Capítulo 06</div>
+  <h2 class="chapter-title">Estrutura dos <span>Posts</span></h2>
+</div>
+
+<!-- SECTION 6: ESTRUTURA -->
+<div class="section">
+  <div class="section-number">06 · Como você constrói</div>
+  <h2 class="section-title">Estrutura Universal de Posts</h2>
+  <p class="section-intro">Todo post — carrossel, reel ou estático — segue a mesma estrutura de três atos. Hook → Entrega → Recompensa. Domine essa estrutura e você nunca mais vai ter um post sem direção.</p>
+
+  <div class="post-step">
+    <div class="post-step-num">01</div>
+    <div class="post-step-content">
+      <div class="post-step-label">Hook</div>
+      <div class="post-step-title">Para o Scroll</div>
+      <div class="post-step-desc">A primeira coisa que aparece — título do carrossel, primeira frase do caption, primeiros 3 segundos do reel. Deve criar uma tensão ou promessa que torna impossível não continuar. Use uma das 7 fórmulas de hook.</div>
+      <div class="post-step-example">"Você não precisa de equipe para escalar. Você precisa de sistemas melhores."</div>
+    </div>
+  </div>
+
+  <div class="post-step">
+    <div class="post-step-num">02</div>
+    <div class="post-step-content">
+      <div class="post-step-label">Perspectiva</div>
+      <div class="post-step-title">Muda o Enquadramento</div>
+      <div class="post-step-desc">Logo após o hook, entregue o novo ponto de vista. Por que você vê isso diferente? Qual a crença que precisa ser quebrada antes de chegar à solução? Isso é o que Dan Koe faz — não vai direto para a lista, primeiro muda a perspectiva.</div>
+      <div class="post-step-example">"A maioria escala com mais pessoas porque nunca parou para mapear o que realmente precisa de gente. A resposta costuma ser: bem menos do que você pensa."</div>
+    </div>
+  </div>
+
+  <div class="post-step">
+    <div class="post-step-num">03</div>
+    <div class="post-step-content">
+      <div class="post-step-label">Entrega</div>
+      <div class="post-step-title">O Sistema / Framework</div>
+      <div class="post-step-desc">O conteúdo de valor real — numerado, específico, acionável. Isso é o que Matt Gray faz bem: frameworks claros com passos que a pessoa pode implementar. Um item por slide em carrossel. Máximo 40 palavras por slide.</div>
+      <div class="post-step-example">"1. Mapeie o que você faz repetidamente (lista de tarefas de 2 semanas)<br>2. Identifique o que não precisa do seu julgamento (80% das tarefas)<br>3. Ative um agente para cada categoria"</div>
+    </div>
+  </div>
+
+  <div class="post-step">
+    <div class="post-step-num">04</div>
+    <div class="post-step-content">
+      <div class="post-step-label">Recompensa</div>
+      <div class="post-step-title">Frase + CTA</div>
+      <div class="post-step-desc">Feche com uma frase de impacto que resume o post em uma linha citável — e um CTA claro. O CTA ideal usa ManyChat: "comenta SQUAD e te mando o guia completo". Nunca termine sem dar um próximo passo.</div>
+      <div class="post-step-example">"Um negócio de uma pessoa não é limitado pela falta de gente. É limitado pela falta de sistema.<br><br>Comenta SQUAD e te mando os 150 agentes que uso."</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:22px; margin-bottom:24px; margin-top:8px">Estrutura Específica: Carrossel</h3>
+
+  <div class="carousel-slide">
+    <div class="slide-num">C</div>
+    <div class="slide-info">
+      <div class="slide-label">Capa (Slide 1)</div>
+      <div class="slide-desc">Título-hook em destaque + subtítulo opcional. Fundo escuro ou claro sólido. Nada mais — o hook faz o trabalho.</div>
+      <div class="slide-example">Ex: "5 agentes de IA que todo solopreneur deveria ativar esta semana"</div>
+    </div>
+  </div>
+
+  <div class="carousel-slide">
+    <div class="slide-num">2</div>
+    <div class="slide-info">
+      <div class="slide-label">Slide 2 — Perspectiva / Problema</div>
+      <div class="slide-desc">Por que isso importa? Qual crença precisa ser quebrada? Cria o contexto antes da solução.</div>
+      <div class="slide-example">Ex: "A maioria das pessoas usa IA como uma calculadora mais esperta. Aqui está o erro."</div>
+    </div>
+  </div>
+
+  <div class="carousel-slide">
+    <div class="slide-num">3-7</div>
+    <div class="slide-info">
+      <div class="slide-label">Slides 3–7 — Conteúdo Numerado</div>
+      <div class="slide-desc">Um item por slide. Número em destaque verde, título bold, 1-2 linhas de explicação. Consistência visual total.</div>
+      <div class="slide-example">Ex: "#1 — Agente de Copywriting: gera hooks, captions e sequências de email em minutos."</div>
+    </div>
+  </div>
+
+  <div class="carousel-slide">
+    <div class="slide-num">F</div>
+    <div class="slide-info">
+      <div class="slide-label">Slide Final — Recompensa + CTA</div>
+      <div class="slide-desc">Frase citável de impacto. CTA com ManyChat ou pergunta para comentário. Seguir / salvar. Nunca termine sem CTA.</div>
+      <div class="slide-example">Ex: "Você não precisa de equipe. Precisa do squad certo. — Comenta SQUAD para receber os 150 agentes."</div>
+    </div>
+  </div>
+
+  <h3 style="font-size:22px; margin-bottom:24px; margin-top:32px">Mix de Formatos Recomendado</h3>
+
+  <div class="freq-row">
+    <div class="freq-format">Carrossel educativo</div>
+    <div class="freq-bar-wrap"><div class="freq-bar" style="width:45%"></div></div>
+    <div class="freq-pct">45%</div>
+  </div>
+  <div class="freq-row">
+    <div class="freq-format">Reel (30–60s)</div>
+    <div class="freq-bar-wrap"><div class="freq-bar" style="width:35%"></div></div>
+    <div class="freq-pct">35%</div>
+  </div>
+  <div class="freq-row">
+    <div class="freq-format">Foto pessoal + caption</div>
+    <div class="freq-bar-wrap"><div class="freq-bar" style="width:15%"></div></div>
+    <div class="freq-pct">15%</div>
+  </div>
+  <div class="freq-row" style="border-bottom:none">
+    <div class="freq-format">Quote estático</div>
+    <div class="freq-bar-wrap"><div class="freq-bar" style="width:5%"></div></div>
+    <div class="freq-pct">5%</div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- CHAPTER 7 HEADER -->
+<div class="chapter-header">
+  <div class="chapter-number">Capítulo 07</div>
+  <h2 class="chapter-title">Frequência &<br><span>Operação</span></h2>
+</div>
+
+<!-- SECTION 7: OPERAÇÃO -->
+<div class="section">
+  <div class="section-number">07 · Como você opera</div>
+  <h2 class="section-title">Frequência & Sistema de Produção</h2>
+  <p class="section-intro">Consistência bate qualidade no curto prazo. Um post bom toda semana constrói mais do que um post perfeito por mês. O objetivo é ter um sistema que roda mesmo nos dias ruins.</p>
+
+  <div class="card-grid">
+    <div class="card card-accent">
+      <div class="card-title">Meta de Publicação</div>
+      <div class="card-content" style="font-size:16px; line-height:1.6">
+        <strong style="color:#c8f542">Instagram:</strong><br>
+        4–5 posts/semana<br>
+        (3 carrosséis + 1–2 reels)<br><br>
+        <strong style="color:#c8f542">YouTube:</strong><br>
+        1 vídeo/semana<br>
+        (10–15 min, pilar 2 ou 3)<br><br>
+        <strong style="color:#c8f542">Stories:</strong><br>
+        Diário — bastidores, reposts, perguntas
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Dia de Batch (Domingo)</div>
+      <div class="card-content">
+        <strong>2 horas por semana para criar a semana inteira:</strong><br><br>
+        • 1h: escrever 3 captions + estrutura de carrosséis<br>
+        • 30min: gravar reel (1–2 takes por tema)<br>
+        • 30min: design dos carrosséis no Canva<br><br>
+        Use agentes de IA para gerar os rascunhos — você revisa e personaliza.
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:20px; margin-bottom:8px; margin-top:8px">Framework APVG — A Estrutura de Toda Newsletter</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:24px">Escrita persuasiva é arquitetura mental. Toda newsletter segue 4 etapas que movem o leitor do ponto A ao ponto B — deixando-o melhor do que quando começou.</p>
+
+  <table>
+    <tr>
+      <th>Etapa</th>
+      <th>Objetivo</th>
+      <th>Como aplicar</th>
+    </tr>
+    <tr>
+      <td><strong>A — Atenção</strong></td>
+      <td>Parar o scroll. O leitor decide em 3 segundos.</td>
+      <td>Número específico, paradoxo, pergunta que cria lacuna, contraste extremo ("99% faz X… o 1% faz Y")</td>
+    </tr>
+    <tr>
+      <td><strong>P — Perspectiva</strong></td>
+      <td>Compartilhar seu ponto de vista único — não informação genérica.</td>
+      <td>Conectar domínios diferentes, usar experiência pessoal como prova, analogias que só você criaria</td>
+    </tr>
+    <tr>
+      <td><strong>V — Vantagem</strong></td>
+      <td>Entregar valor concreto e aplicável. O leitor sai mais capaz.</td>
+      <td>Framework com nome, passos exatos (3–5), resultado esperado realista, prova social específica</td>
+    </tr>
+    <tr>
+      <td><strong>G — Gamificação</strong></td>
+      <td>Criar hábito de leitura. O leitor quer a próxima edição.</td>
+      <td>Teaser da próxima edição, pergunta para responder por reply, desafio de 24h, CTA leve para compartilhar</td>
+    </tr>
+  </table>
+
+  <div class="big-quote">
+    "Toda newsletter: 1500–2500 palavras. Estrutura: Gancho (50–100) → História (200–300) → Desenvolvimento APVG (800–1200) → Framework com nome (300–400) → Chamado suave (30–50). Regra: 24h de incubação entre escrita e edição final."
+    <cite>— Framework APVG · Sistema Tulhones</cite>
+  </div>
+
+  <h3 style="font-size:20px; margin-bottom:20px; margin-top:32px">O Content Ecosystem (Dan Koe) — Newsletter é a Fonte de Tudo</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:24px">A newsletter não é mais uma peça de conteúdo. É o motor. Tudo o mais é derivado dela. Escreva primeiro. Distribua depois.</p>
+
+  <table>
+    <tr>
+      <th>Origem</th>
+      <th>→ Derivado</th>
+    </tr>
+    <tr>
+      <td><strong>Newsletter APVG</strong> (fonte de tudo)</td>
+      <td>Script do YouTube · Episódio de podcast · Artigo no LinkedIn · Email de follow-up</td>
+    </tr>
+    <tr>
+      <td><strong>Newsletter → YouTube</strong></td>
+      <td>Grava lendo/adaptando a newsletter. Não existe roteiro separado.</td>
+    </tr>
+    <tr>
+      <td><strong>Newsletter → Instagram</strong></td>
+      <td>Carrossel (3 insights principais) · Reel (melhor frase em vídeo curto) · Stories (dica rápida)</td>
+    </tr>
+    <tr>
+      <td><strong>Newsletter → Redes</strong></td>
+      <td>7–10 tweets/threads (frases de impacto) · Posts LinkedIn · Threads</td>
+    </tr>
+    <tr>
+      <td><strong>Resultado/métrica real</strong></td>
+      <td>Post de building in public + Stories + nova newsletter de Prova Social</td>
+    </tr>
+  </table>
+
+  <div class="big-quote">
+    "1 newsletter bem escrita = 20+ peças de conteúdo distribuído. Trabalhe na profundidade do núcleo — não na quantidade de produção. Cada hora de criação profunda gera 4 horas de conteúdo distribuído."
+    <cite>— Sistema Tulhones de Multiplicação Estratégica</cite>
+  </div>
+
+  <h3 style="font-size:20px; margin-bottom:20px">Checklist Pré-Publicação</h3>
+
+  <ul class="do-list">
+    <li>O hook para em menos de 2 segundos? Teste mentalmente scrollando rápido</li>
+    <li>Existe uma entrega real de valor — não apenas motivação?</li>
+    <li>O slide final tem CTA + frase citável?</li>
+    <li>O design usa a paleta correta e está visualmente consistente com os outros posts?</li>
+    <li>O caption tem hashtags relevantes (5–10, não 30)?</li>
+    <li>Se carrossel: máximo 40 palavras por slide?</li>
+    <li>O post pertence a um dos 5 pilares? Qual é o objetivo (ToFu/MoFu/BoFu)?</li>
+  </ul>
+</div>
+
+
+<hr class="section-divider">
+
+<!-- CHAPTER 8 HEADER -->
+<div class="chapter-header">
+  <div class="chapter-number">Capítulo 08</div>
+  <h2 class="chapter-title">Design <span>System</span><br>Completo</h2>
+</div>
+
+<!-- SECTION 8: DESIGN SYSTEM -->
+<div class="section">
+  <div class="section-number">08 · Como você aparece (técnico)</div>
+  <h2 class="section-title">Manual de Cor, Fonte & Design</h2>
+  <p class="section-intro">Este é o sistema de design que garante consistência em todo conteúdo — Instagram, YouTube, PDF, apresentações. Um feed coeso não é acidente: é arquitetura. Siga este guia em cada peça que criar.</p>
+
+  <!-- CORES -->
+  <h3 style="font-size:22px; margin-bottom:8px">Sistema de Cores</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:24px">6 cores. Nada fora desta paleta. Cada cor tem um papel específico — não são intercambiáveis.</p>
+
+  <table style="margin-bottom:40px">
+    <tr>
+      <th>Nome</th>
+      <th>HEX</th>
+      <th>RGB</th>
+      <th>Papel</th>
+      <th>Onde usar</th>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:16px;height:16px;background:#0a0a0a;border-radius:3px;vertical-align:middle;margin-right:8px"></span><strong>Preto Base</strong></td>
+      <td><code>#0a0a0a</code></td>
+      <td>10, 10, 10</td>
+      <td>Cor principal de texto e fundo escuro</td>
+      <td>Capas de carrossel, fundos de quote, texto em fundo claro</td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:16px;height:16px;background:#ffffff;border:1px solid #ddd;border-radius:3px;vertical-align:middle;margin-right:8px"></span><strong>Branco Puro</strong></td>
+      <td><code>#ffffff</code></td>
+      <td>255, 255, 255</td>
+      <td>Base de slides e texto em fundo escuro</td>
+      <td>Fundo de slides internos do carrossel, texto sobre preto</td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:16px;height:16px;background:#c8f542;border-radius:3px;vertical-align:middle;margin-right:8px"></span><strong>Verde Destaque</strong></td>
+      <td><code>#c8f542</code></td>
+      <td>200, 245, 66</td>
+      <td>Cor de ação e destaques — use com moderação</td>
+      <td>Números em carrossel, CTAs, badges, palavras-chave em fundo preto</td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:16px;height:16px;background:#f5f2ec;border-radius:3px;vertical-align:middle;margin-right:8px"></span><strong>Creme</strong></td>
+      <td><code>#f5f2ec</code></td>
+      <td>245, 242, 236</td>
+      <td>Fundo alternativo suave — mais quente que branco</td>
+      <td>Slides internos de carrossel, fundos de post editorial</td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:16px;height:16px;background:#2d5016;border-radius:3px;vertical-align:middle;margin-right:8px"></span><strong>Verde Escuro</strong></td>
+      <td><code>#2d5016</code></td>
+      <td>45, 80, 22</td>
+      <td>Texto de destaque em fundo claro, headers secundários</td>
+      <td>Tags de pilar, subtítulos em slides creme</td>
+    </tr>
+    <tr>
+      <td><span style="display:inline-block;width:16px;height:16px;background:#8ab520;border-radius:3px;vertical-align:middle;margin-right:8px"></span><strong>Verde Médio</strong></td>
+      <td><code>#8ab520</code></td>
+      <td>138, 181, 32</td>
+      <td>Bordas, separadores, ícones secundários</td>
+      <td>Linha de destaque lateral, separadores, bordas de card</td>
+    </tr>
+  </table>
+
+  <div class="hook-block" style="background:#f5f2ec; color:#0a0a0a; margin-bottom:40px">
+    <div class="hook-type" style="color:#8ab520">Regras de Uso de Cor</div>
+    <div class="hook-formula" style="color:#2d5016; font-style:normal; font-size:15px; line-height:1.8">
+      ✓ Máximo 3 cores por peça de conteúdo<br>
+      ✓ Verde Destaque (#c8f542) aparece em no máximo 1 elemento por slide<br>
+      ✓ Fundo preto + texto branco + um toque verde = a combinação mais forte<br>
+      ✓ Fundo creme + texto preto + borda verde escuro = a combinação editorial<br>
+      ✗ Nunca use cores fora desta paleta — nem "quase iguais"<br>
+      ✗ Nunca use gradientes — o sistema é flat e limpo<br>
+      ✗ Nunca use cores diferentes para tipos iguais de elemento (todos os números = verde)
+    </div>
+  </div>
+
+  <!-- TIPOGRAFIA -->
+  <h3 style="font-size:22px; margin-bottom:8px; margin-top:8px">Sistema Tipográfico</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:24px">Duas fontes. Apenas duas. A consistência tipográfica é o que faz um feed parecer uma marca, não um álbum aleatório.</p>
+
+  <table style="margin-bottom:32px">
+    <tr>
+      <th>Função</th>
+      <th>Fonte Principal</th>
+      <th>Alternativa</th>
+      <th>Peso</th>
+      <th>Uso</th>
+    </tr>
+    <tr>
+      <td><strong>Títulos / Hooks</strong></td>
+      <td>Inter</td>
+      <td>DM Sans / Helvetica Neue</td>
+      <td>700–900 (Bold/Black)</td>
+      <td>Capa de carrossel, títulos de reel, headline de post</td>
+    </tr>
+    <tr>
+      <td><strong>Corpo / Subtítulos</strong></td>
+      <td>Inter</td>
+      <td>DM Sans / Helvetica Neue</td>
+      <td>400–500 (Regular/Medium)</td>
+      <td>Texto interno dos slides, caption do post, descrição</td>
+    </tr>
+    <tr>
+      <td><strong>Códigos / Tags / Labels</strong></td>
+      <td>JetBrains Mono</td>
+      <td>Courier New / Space Mono</td>
+      <td>400 (Regular)</td>
+      <td>Números de passo, tags de pilar, datas, labels técnicos</td>
+    </tr>
+  </table>
+
+  <div class="card-grid" style="margin-bottom:40px">
+    <div class="card">
+      <div class="card-title">Tamanhos — Carrossel (1080×1080px)</div>
+      <div class="card-content" style="line-height:2">
+        Título capa: <strong>64–80px</strong><br>
+        Subtítulo capa: <strong>24–28px</strong><br>
+        Número destaque: <strong>80–96px</strong><br>
+        Título do item: <strong>32–40px</strong><br>
+        Descrição: <strong>22–26px</strong><br>
+        Label/tag: <strong>14–16px</strong> (monospace)<br>
+        CTA slide final: <strong>28–32px</strong>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Tamanhos — Reel (1080×1920px)</div>
+      <div class="card-content" style="line-height:2">
+        Texto principal: <strong>56–72px</strong><br>
+        Subtexto: <strong>28–32px</strong><br>
+        Nome/handle: <strong>20–22px</strong><br>
+        Lower third: <strong>24–28px</strong><br>
+        CTA final: <strong>36–40px</strong><br>
+        <br>
+        Zona segura: manter texto fora dos<br>150px superiores e inferiores
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID E ESPAÇAMENTO -->
+  <h3 style="font-size:22px; margin-bottom:8px; margin-top:8px">Grid & Espaçamento</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:24px">Espaço em branco é design. Posts lotados parecem amadores. Posts com respiração parecem premium.</p>
+
+  <table style="margin-bottom:40px">
+    <tr>
+      <th>Elemento</th>
+      <th>Regra</th>
+    </tr>
+    <tr>
+      <td><strong>Margem interna (padding)</strong></td>
+      <td>Mínimo 80px de cada lado no carrossel 1080×1080px</td>
+    </tr>
+    <tr>
+      <td><strong>Espaço entre elementos</strong></td>
+      <td>Sempre múltiplo de 8px: 8 / 16 / 24 / 32 / 48 / 64px</td>
+    </tr>
+    <tr>
+      <td><strong>Máximo de texto por slide</strong></td>
+      <td>40 palavras. Se passar, divida em dois slides.</td>
+    </tr>
+    <tr>
+      <td><strong>Alinhamento</strong></td>
+      <td>Escolha esquerda OU centralizado — nunca misture no mesmo template</td>
+    </tr>
+    <tr>
+      <td><strong>Número de elementos por slide</strong></td>
+      <td>Máximo 3 elementos visuais distintos (texto, ícone, divisor)</td>
+    </tr>
+    <tr>
+      <td><strong>Linha de destaque</strong></td>
+      <td>Bordas e linhas sempre em 2px ou 4px — nunca 1px (some na tela do celular)</td>
+    </tr>
+  </table>
+
+  <!-- TEMPLATES -->
+  <h3 style="font-size:22px; margin-bottom:8px; margin-top:8px">Templates de Carrossel — 4 Layouts</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:24px">Crie estes 4 templates no Canva uma vez. Use e reuse para sempre — só troque o conteúdo.</p>
+
+  <div class="pillar pillar-p1" style="margin-bottom:20px">
+    <div class="pillar-tag">Template A · Capa Preta</div>
+    <div class="pillar-name" style="font-size:17px">Fundo #0a0a0a · Título branco bold · Subtítulo cinza · Toque verde</div>
+    <div class="pillar-desc" style="font-size:14px">Usar em: hooks filosóficos, paradoxos, declarações de posicionamento.<br>
+    Estrutura: Label monospace verde escuro no topo → Título grande branco → Subtítulo opcional cinza 60% → Handle @tulhones pequeno no canto inferior</div>
+  </div>
+
+  <div class="pillar pillar-p2" style="margin-bottom:20px">
+    <div class="pillar-tag">Template B · Capa Creme Editorial</div>
+    <div class="pillar-name" style="font-size:17px">Fundo #f5f2ec · Título preto · Número verde destaque · Borda verde escuro</div>
+    <div class="pillar-desc" style="font-size:14px">Usar em: listicles ("5 sistemas que..."), tutoriais, guias passo a passo.<br>
+    Estrutura: Número grande #c8f542 no canto → Título bold preto → Linha divisória verde escuro → Subtítulo regular</div>
+  </div>
+
+  <div class="pillar pillar-p3" style="margin-bottom:20px">
+    <div class="pillar-tag">Template C · Slide Interno Branco</div>
+    <div class="pillar-name" style="font-size:17px">Fundo #ffffff · Número verde · Título bold preto · Descrição regular cinza</div>
+    <div class="pillar-desc" style="font-size:14px">Usar em: todos os slides de conteúdo interno (2 ao penúltimo).<br>
+    Estrutura: Número bold #c8f542 grande → Título do item bold → Descrição 2 linhas máx. → Barra de progresso discreta no rodapé</div>
+  </div>
+
+  <div class="pillar pillar-p4" style="margin-bottom:40px">
+    <div class="pillar-tag">Template D · Slide Final CTA</div>
+    <div class="pillar-name" style="font-size:17px">Fundo #0a0a0a · Frase citável branca · CTA verde destaque · Handle</div>
+    <div class="pillar-desc" style="font-size:14px">Usar em: último slide de todo carrossel sem exceção.<br>
+    Estrutura: Frase de impacto em 1–2 linhas → Divisor fino → Instrução CTA destacada em #c8f542 → Handle @tulhones + ícone de seguir</div>
+  </div>
+
+  <!-- FOTOGRAFIA -->
+  <h3 style="font-size:22px; margin-bottom:8px">Guia de Fotografia</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:24px">Suas fotos são o diferencial visual do feed. A estética de corrida ao ar livre é seu pano de fundo — use com intenção.</p>
+
+  <div class="card-grid" style="margin-bottom:32px">
+    <div class="card">
+      <div class="card-title">Tipos de Foto — Usar</div>
+      <div class="card-content" style="line-height:1.9">
+        ✓ Você correndo (movimento, ao ar livre, luz natural)<br>
+        ✓ Você pós-treino (suado, autêntico, presente)<br>
+        ✓ Setup de trabalho minimalista (laptop + caderno, mesa limpa)<br>
+        ✓ Vista de onde você treina (rua, pista, parque — com luz boa)<br>
+        ✓ Detalhe de tênis + código/tela (ponte visual atleta-operador)
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Tipos de Foto — Evitar</div>
+      <div class="card-content" style="line-height:1.9">
+        ✗ Selfie estática sem contexto em fundo neutro<br>
+        ✗ Ambientes urbanos poluídos ou genéricos<br>
+        ✗ Mesa bagunçada ou ambiente desorganizado<br>
+        ✗ Fotos com muita edição artificial (filtro HDR, saturação excessiva)<br>
+        ✗ Fotos corporativas ou em escritório padrão
+      </div>
+    </div>
+  </div>
+
+  <table style="margin-bottom:32px">
+    <tr>
+      <th>Ajuste Lightroom / Celular</th>
+      <th>Valor sugerido</th>
+      <th>Por quê</th>
+    </tr>
+    <tr>
+      <td><strong>Exposição</strong></td>
+      <td>+0.3 a +0.5</td>
+      <td>Feed levemente claro = mais profissional e convidativo</td>
+    </tr>
+    <tr>
+      <td><strong>Temperatura (Warmth)</strong></td>
+      <td>+10 a +20 (mais quente)</td>
+      <td>Combina com o creme da paleta — evita o azul frio genérico</td>
+    </tr>
+    <tr>
+      <td><strong>Saturação</strong></td>
+      <td>−5 a −15 (ligeiramente dessaturado)</td>
+      <td>Tom mais editorial, menos "filtro Instagram antigo"</td>
+    </tr>
+    <tr>
+      <td><strong>Verde (HSL)</strong></td>
+      <td>Luminância +10 a +15</td>
+      <td>Reforça a cor de marca nas fotos ao ar livre com grama/árvores</td>
+    </tr>
+    <tr>
+      <td><strong>Sombras</strong></td>
+      <td>+10 a +20 (levantar sombras)</td>
+      <td>Mais detalhe nas áreas escuras = foto mais limpa no celular</td>
+    </tr>
+    <tr>
+      <td><strong>Nitidez</strong></td>
+      <td>+20 a +30</td>
+      <td>Compensa a perda no upload do Instagram</td>
+    </tr>
+  </table>
+
+  <!-- CANVA SETUP -->
+  <h3 style="font-size:22px; margin-bottom:8px; margin-top:8px">Setup do Canva</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:24px">Configure uma vez. Use para sempre.</p>
+
+  <div class="card-grid card-grid-3" style="margin-bottom:40px">
+    <div class="card">
+      <div class="card-title">Dimensões</div>
+      <div class="card-content" style="line-height:2">
+        Carrossel: <strong>1080 × 1080px</strong><br>
+        Reel thumbnail: <strong>1080 × 1920px</strong><br>
+        YouTube thumb: <strong>1280 × 720px</strong><br>
+        Story: <strong>1080 × 1920px</strong>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Fontes no Canva</div>
+      <div class="card-content" style="line-height:2">
+        Título: <strong>Inter Bold</strong><br>
+        Corpo: <strong>Inter Regular</strong><br>
+        Labels: <strong>Space Mono</strong><br>
+        (Alternativa: DM Sans + Courier Prime)
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Cores Salvas</div>
+      <div class="card-content" style="line-height:2">
+        Salve as 6 cores como "Brand Colors" no Canva para acesso rápido em qualquer template.
+      </div>
+    </div>
+  </div>
+
+  <!-- YOUTUBE THUMBNAIL -->
+  <h3 style="font-size:22px; margin-bottom:8px; margin-top:8px">Thumbnail do YouTube</h3>
+  <p style="font-size:15px; color:#666; margin-bottom:24px">A thumbnail é o hook do YouTube. Mesma lógica do carrossel — ela para o scroll.</p>
+
+  <table style="margin-bottom:40px">
+    <tr>
+      <th>Elemento</th>
+      <th>Especificação</th>
+    </tr>
+    <tr>
+      <td><strong>Dimensão</strong></td>
+      <td>1280 × 720px (16:9) — tamanho mínimo 640×360px</td>
+    </tr>
+    <tr>
+      <td><strong>Foto</strong></td>
+      <td>Você em foco, expressão intencional (não sorriso genérico — curiosidade ou determinação)</td>
+    </tr>
+    <tr>
+      <td><strong>Texto</strong></td>
+      <td>Máximo 6 palavras em Inter Bold — deve ser legível em miniatura 100px de largura</td>
+    </tr>
+    <tr>
+      <td><strong>Cor de fundo</strong></td>
+      <td>#0a0a0a (preto) OU #c8f542 (verde) para máximo contraste</td>
+    </tr>
+    <tr>
+      <td><strong>Consistência</strong></td>
+      <td>Todo vídeo usa o mesmo layout de thumbnail — só muda texto e foto. Feed coeso no canal.</td>
+    </tr>
+    <tr>
+      <td><strong>Regra de ouro</strong></td>
+      <td>Se fechar os olhos e abrir: se o texto não estiver imediatamente legível, refaça.</td>
+    </tr>
+  </table>
+
+  <!-- APLICAÇÃO MULTIPLATAFORMA -->
+  <h3 style="font-size:22px; margin-bottom:8px; margin-top:8px">Sistema por Plataforma</h3>
+
+  <table style="margin-bottom:40px">
+    <tr>
+      <th>Plataforma</th>
+      <th>Formato prioritário</th>
+      <th>Paleta dominante</th>
+      <th>Tom visual</th>
+    </tr>
+    <tr>
+      <td><strong>Instagram Feed</strong></td>
+      <td>Carrossel 1080×1080</td>
+      <td>Preto + Creme + Verde</td>
+      <td>Editorial minimalista</td>
+    </tr>
+    <tr>
+      <td><strong>Instagram Reels</strong></td>
+      <td>Vertical 1080×1920</td>
+      <td>Preto + Branco + Verde</td>
+      <td>Alto contraste, texto grande</td>
+    </tr>
+    <tr>
+      <td><strong>Instagram Stories</strong></td>
+      <td>Vertical 1080×1920</td>
+      <td>Creme + Preto</td>
+      <td>Casual, bastidores, humano</td>
+    </tr>
+    <tr>
+      <td><strong>YouTube Thumb</strong></td>
+      <td>1280×720</td>
+      <td>Preto OU Verde como fundo</td>
+      <td>Impacto, contraste máximo</td>
+    </tr>
+    <tr>
+      <td><strong>Documentos / PDFs</strong></td>
+      <td>A4 portrait</td>
+      <td>Preto + Creme + Verde</td>
+      <td>Premium editorial (como este guia)</td>
+    </tr>
+  </table>
+
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION FINAL: RESUMO -->
+<div class="section">
+  <div class="section-number">09 · Referência rápida</div>
+  <h2 class="section-title">O Guia em Uma Página</h2>
+
+  <p class="section-intro">Cole na parede. Abra antes de criar qualquer conteúdo. Estas são as regras que definem sua voz.</p>
+
+  <div class="card-grid">
+    <div class="card card-accent">
+      <div class="card-title">Personagem</div>
+      <div class="card-content">O Atleta-Operador. Constrói OPB com IA. Treina como atleta. Vive o que ensina.</div>
+    </div>
+    <div class="card card-green">
+      <div class="card-title">POV Central</div>
+      <div class="card-content">Você não precisa de equipe. Precisa de sistemas e alavancagem. IA é o multiplicador.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Tom</div>
+      <div class="card-content">Direto + sistêmico + filosófico + provocador. Nunca guru aspiracional.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Visual</div>
+      <div class="card-content">Preto + creme + verde #c8f542. Fotos de corrida. Carrosséis minimalistas.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Pilares</div>
+      <div class="card-content">Filosofia OPB · Sistemas IA · Performance · Prova · Conversão (25/30/20/15/10%)</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Estrutura</div>
+      <div class="card-content">Hook → Perspectiva → Sistema → Frase + CTA. Todo post, todo formato.</div>
+    </div>
+  </div>
+
+  <div class="positioning-box">
+    <div class="positioning-label">A Missão do Conteúdo</div>
+    <div class="positioning-text">Cada post que você publica deve fazer alguém pensar:<br><span>"Eu quero construir o que ele está construindo."</span></div>
+    <div class="positioning-sub">Quando isso acontece de forma consistente, audiência, produto e receita se tornam consequências inevitáveis.</div>
+  </div>
+</div>
+
+</body>
+</html>

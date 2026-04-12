@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plano de Conteúdo — Abril 2026 — @tulhones</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Georgia',serif; background:#fff; color:#1a1a1a; line-height:1.7; }
+
+/* COVER */
+.cover {
+  background:#0a0a0a; color:#fff;
+  min-height:100vh; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center;
+  padding:60px 40px; page-break-after:always;
+}
+.cover-eyebrow { font-family:'Courier New',monospace; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:#555; margin-bottom:40px; }
+.cover-title { font-size:56px; font-weight:normal; line-height:1.1; margin-bottom:20px; }
+.cover-title span { color:#c8f542; }
+.cover-sub { font-size:18px; color:#888; max-width:540px; margin-bottom:56px; }
+.cover-stats { display:flex; gap:48px; justify-content:center; flex-wrap:wrap; }
+.stat { text-align:center; }
+.stat-num { font-family:'Courier New',monospace; font-size:36px; color:#c8f542; display:block; }
+.stat-label { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#555; margin-top:4px; }
+
+/* CHAPTER */
+.chapter-header {
+  background:#0a0a0a; color:#fff; padding:48px 40px;
+  page-break-before:always;
+}
+.chapter-label { font-family:'Courier New',monospace; font-size:11px; letter-spacing:4px; color:#555; text-transform:uppercase; margin-bottom:12px; }
+.chapter-title { font-size:42px; font-weight:normal; line-height:1.2; }
+.chapter-title span { color:#c8f542; }
+
+/* SECTIONS */
+.section { max-width:900px; margin:0 auto; padding:64px 40px; }
+.section-label { font-family:'Courier New',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#aaa; margin-bottom:10px; }
+.section-title { font-size:32px; font-weight:normal; margin-bottom:12px; }
+.section-intro { font-size:16px; color:#666; max-width:680px; margin-bottom:40px; line-height:1.8; }
+hr.divider { border:none; border-top:1px solid #eee; }
+
+/* PRODUCTION SCHEDULE */
+.week-block { margin-bottom:48px; }
+.week-header {
+  background:#0a0a0a; color:#fff; border-radius:12px 12px 0 0;
+  padding:20px 28px; display:flex; align-items:center; gap:20px;
+}
+.week-title { font-size:18px; font-weight:bold; }
+.week-dates { font-family:'Courier New',monospace; font-size:12px; color:#666; }
+.week-body { border:1px solid #e8e8e8; border-top:none; border-radius:0 0 12px 12px; overflow:hidden; }
+
+.day-row {
+  display:grid; grid-template-columns:120px 1fr;
+  border-bottom:1px solid #f0f0f0;
+}
+.day-row:last-child { border-bottom:none; }
+.day-label {
+  background:#f8f8f8; padding:16px 20px;
+  font-family:'Courier New',monospace; font-size:12px;
+  color:#888; border-right:1px solid #f0f0f0;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.day-name { font-size:14px; font-weight:bold; color:#333; margin-bottom:2px; }
+.day-date { font-size:11px; color:#aaa; }
+.day-content { padding:16px 20px; }
+.day-task { font-size:14px; color:#333; margin-bottom:4px; line-height:1.6; }
+.day-task strong { color:#0a0a0a; }
+
+/* TAGS */
+.tag {
+  display:inline-block; padding:3px 10px; border-radius:99px;
+  font-family:'Courier New',monospace; font-size:10px; letter-spacing:1px;
+  text-transform:uppercase; margin-right:6px; margin-bottom:4px;
+}
+.tag-yt { background:#ff0000; color:#fff; }
+.tag-reel { background:#833ab4; color:#fff; }
+.tag-carrossel { background:#0a0a0a; color:#c8f542; }
+.tag-batch { background:#c8f542; color:#0a0a0a; }
+.tag-record { background:#e85d3a; color:#fff; }
+.tag-edit { background:#3a7bd5; color:#fff; }
+.tag-p1 { background:#f0f0f0; color:#333; }
+.tag-p2 { background:#dbeafe; color:#1e3a5f; }
+.tag-p3 { background:#dcfce7; color:#14532d; }
+.tag-p4 { background:#fef9c3; color:#713f12; }
+.tag-p5 { background:#f3e8ff; color:#4a044e; }
+.tag-tofu { background:#e8f5e9; color:#2e7d32; }
+.tag-mofu { background:#e3f2fd; color:#1565c0; }
+.tag-bofu { background:#fce4ec; color:#880e4f; }
+.tag-phase1 { background:#1a1a1a; color:#c8f542; }
+.tag-phase2 { background:#1a3a6a; color:#90caf9; }
+.tag-phase3 { background:#3a0a1a; color:#f48fb1; }
+
+/* CONTENT CARDS */
+.content-card {
+  border:1px solid #e8e8e8; border-radius:12px;
+  margin-bottom:24px; overflow:hidden;
+}
+.content-card-header {
+  background:#0a0a0a; color:#fff;
+  padding:16px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;
+}
+.content-card-header.phase1 { background:#0a0a0a; }
+.content-card-header.phase2 { background:#0d1b3e; }
+.content-card-header.phase3 { background:#2d0a1a; }
+.content-card-header.yt { background:#8b0000; }
+.card-day-info { }
+.card-day { font-family:'Courier New',monospace; font-size:11px; color:#888; }
+.card-title { font-size:18px; color:#fff; font-weight:bold; line-height:1.3; margin-top:4px; }
+.card-tags { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+
+.content-card-body { padding:24px; }
+
+.card-section { margin-bottom:20px; }
+.card-section:last-child { margin-bottom:0; }
+.card-section-title {
+  font-family:'Courier New',monospace; font-size:10px; letter-spacing:2px;
+  text-transform:uppercase; color:#aaa; margin-bottom:8px;
+}
+.card-section-body { font-size:14px; color:#444; line-height:1.7; }
+
+/* HOOK HIGHLIGHT */
+.hook-box {
+  background:#0a0a0a; color:#c8f542;
+  padding:16px 20px; border-radius:8px; margin-bottom:12px;
+  font-size:16px; font-style:italic; line-height:1.5;
+}
+
+/* SLIDES */
+.slides-list { list-style:none; }
+.slides-list li {
+  display:grid; grid-template-columns:36px 1fr;
+  gap:12px; padding:10px 0; border-bottom:1px solid #f5f5f5; align-items:flex-start;
+}
+.slides-list li:last-child { border-bottom:none; }
+.slide-num {
+  background:#c8f542; color:#0a0a0a; width:28px; height:28px;
+  border-radius:6px; display:flex; align-items:center; justify-content:center;
+  font-family:'Courier New',monospace; font-size:11px; font-weight:bold; flex-shrink:0;
+}
+.slide-text { font-size:14px; color:#444; line-height:1.6; padding-top:4px; }
+.slide-text strong { color:#0a0a0a; }
+
+/* REEL SCRIPT */
+.script-line {
+  display:grid; grid-template-columns:80px 1fr;
+  gap:16px; padding:8px 0; border-bottom:1px solid #f5f5f5; font-size:14px;
+}
+.script-line:last-child { border-bottom:none; }
+.script-time { font-family:'Courier New',monospace; font-size:11px; color:#aaa; padding-top:2px; }
+.script-text { color:#333; line-height:1.6; }
+
+/* YT BLOCKS */
+.yt-block {
+  background:#f8f8f8; border-radius:8px; padding:16px 20px; margin-bottom:10px;
+  display:grid; grid-template-columns:90px 1fr; gap:16px; align-items:flex-start;
+}
+.yt-time { font-family:'Courier New',monospace; font-size:12px; color:#e85d3a; font-weight:bold; padding-top:2px; }
+.yt-desc { font-size:14px; color:#333; line-height:1.6; }
+.yt-desc strong { color:#0a0a0a; }
+
+/* OVERVIEW TABLE */
+.overview-table { width:100%; border-collapse:collapse; font-size:13px; }
+.overview-table th { background:#0a0a0a; color:#fff; padding:12px 14px; text-align:left; font-family:'Courier New',monospace; font-size:10px; letter-spacing:2px; }
+.overview-table td { padding:10px 14px; border-bottom:1px solid #f0f0f0; vertical-align:top; }
+.overview-table tr:nth-child(even) td { background:#fafafa; }
+
+/* PHASE DIVIDER */
+.phase-divider {
+  padding:24px 40px; max-width:900px; margin:0 auto;
+  display:flex; align-items:center; gap:16px;
+}
+.phase-line { flex:1; border-top:2px solid #e8e8e8; }
+.phase-label {
+  font-family:'Courier New',monospace; font-size:11px; letter-spacing:3px;
+  text-transform:uppercase; color:#aaa; white-space:nowrap;
+}
+
+@media print {
+  .chapter-header { page-break-before:always; }
+  .cover { page-break-after:always; }
+  .content-card { page-break-inside:avoid; }
+}
+@page { margin:0; size:A4; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">@tulhones · Apex Digital · Abril 2026</div>
+  <h1 class="cover-title">Plano de Conteúdo<br><span>Abril 2026</span></h1>
+  <p class="cover-sub">Sistema de produção semanal — gravação no domingo, batch na segunda, publicação diária.</p>
+  <div class="cover-stats">
+    <div class="stat"><span class="stat-num">19</span><div class="stat-label">Dias</div></div>
+    <div class="stat"><span class="stat-num">6</span><div class="stat-label">Vídeos YouTube</div></div>
+    <div class="stat"><span class="stat-num">26</span><div class="stat-label">Posts Instagram</div></div>
+    <div class="stat"><span class="stat-num">6</span><div class="stat-label">Newsletters</div></div>
+    <div class="stat"><span class="stat-num">3</span><div class="stat-label">Fases</div></div>
+  </div>
+</div>
+
+<!-- CAPÍTULO 1: VISÃO GERAL -->
+<div class="chapter-header">
+  <div class="chapter-label">Capítulo 01</div>
+  <h2 class="chapter-title">Visão Geral &<br><span>Sistema de Produção</span></h2>
+</div>
+
+<div class="section">
+  <div class="section-label">01 · Cadência semanal</div>
+  <h2 class="section-title">Como opera cada semana</h2>
+  <p class="section-intro">Três semanas com ritmo idêntico. A newsletter é escrita primeiro e vira o script do YouTube — nunca o contrário. Gravar no domingo com script pronto elimina improvisação. Batch na segunda garante que a semana toda já está pronta antes de começar. Publicação diária no piloto automático.</p>
+
+  <div class="week-block">
+    <div class="week-header">
+      <div>
+        <div class="week-title">Rotina Semanal Fixa</div>
+        <div class="week-dates">Repete nas 3 semanas de abril</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div class="day-row">
+        <div class="day-label"><div class="day-name">SÁBADO</div></div>
+        <div class="day-content">
+          <span class="tag tag-batch">Escrita NL</span>
+          <div class="day-task"><strong>Escrever as 2 newsletters da semana usando o framework APVG</strong> (sessão de criação — 90 min). <strong>NL1 "O Sistema da Semana"</strong> (prática, Vantagem mais pesada). <strong>NL2 "A Ideia da Semana"</strong> (filosófica, Perspectiva mais pesada). Salvar os rascunhos. Deixar incubar 24h antes da edição final.</div>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-label"><div class="day-name">DOMINGO</div></div>
+        <div class="day-content">
+          <span class="tag tag-record">Revisão + Gravação</span>
+          <div class="day-task"><strong>Bloco 1 — Revisar e finalizar as 2 newsletters</strong> (sessão de edição — 45 min): cortar 20% do texto, verificar fluxo, polir gancho e gamificação. Deixar pronto para agendar na segunda.</div>
+          <div class="day-task"><strong>Bloco 2 — Gravar os 2 vídeos do YouTube</strong> usando a newsletter como script (12–15 min cada). A newsletter JÁ É o roteiro — adapte para o formato falado. Sem edição agora. Só gravar e conferir áudio/imagem.</div>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-label"><div class="day-name">SEGUNDA</div></div>
+        <div class="day-content">
+          <span class="tag tag-edit">Edição</span><span class="tag tag-batch">Batch IG</span>
+          <div class="day-task"><strong>Manhã:</strong> editar e subir os 2 vídeos do YouTube (thumbnail + descrição + tags). Agendar as 2 newsletters no Substack/Kit — NL1 para terça, NL2 para quinta.</div>
+          <div class="day-task"><strong>Tarde — Batch completo via agentes:</strong> extrair todo o conteúdo Instagram da semana A PARTIR DAS NEWSLETTERS — reels + carrosséis + tweets/threads + stories. A newsletter já tem os insights prontos: só formatar para cada canal. Agendar tudo.</div>
+        </div>
+      </div>
+      <div class="day-row">
+        <div class="day-label"><div class="day-name">TER → SÁB</div></div>
+        <div class="day-content">
+          <span class="tag tag-reel">Reel</span><span class="tag tag-carrossel">Carrossel</span>
+          <div class="day-task"><strong>Publicação automática:</strong> 1 reel + 1 carrossel por dia, já agendados na segunda-feira. Stories de bastidores diários (5 min por dia).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VISÃO GERAL TABELA -->
+  <h3 style="font-size:20px; margin-bottom:16px">Todos os 19 dias de Abril</h3>
+  <table class="overview-table">
+    <tr>
+      <th>Data</th><th>Dia</th><th>Produção</th><th>Instagram</th><th>YouTube</th><th>Newsletter</th><th>Fase</th>
+    </tr>
+    <tr><td><strong>12/04</strong></td><td>Dom</td><td><span class="tag tag-batch">Escreve NL1+NL2</span> <span class="tag tag-record">Grava YT1+YT2</span></td><td>—</td><td>—</td><td>Rascunho NL1 + NL2</td><td><span class="tag tag-phase1">Declaração</span></td></tr>
+    <tr><td><strong>13/04</strong></td><td>Seg</td><td><span class="tag tag-edit">Edita</span> <span class="tag tag-batch">Batch IG</span></td><td>—</td><td>Sobe YT1 + YT2</td><td>Agenda NL1 (terça) + NL2 (quinta)</td><td><span class="tag tag-phase1">Declaração</span></td></tr>
+    <tr><td><strong>14/04</strong></td><td>Ter</td><td>—</td><td>Reel D1 + Carrossel D1</td><td>—</td><td><span style="color:#c8f542;font-weight:bold">🟢 NL1 — O Sistema</span></td><td><span class="tag tag-phase1">Declaração</span></td></tr>
+    <tr><td><strong>15/04</strong></td><td>Qua</td><td>—</td><td>Reel D2 + Carrossel D2</td><td>—</td><td>—</td><td><span class="tag tag-phase1">Declaração</span></td></tr>
+    <tr><td><strong>16/04</strong></td><td>Qui</td><td>—</td><td>Reel D3 + Carrossel D3</td><td>—</td><td><span style="color:#c8f542;font-weight:bold">🟢 NL2 — A Ideia</span></td><td><span class="tag tag-phase1">Declaração</span></td></tr>
+    <tr><td><strong>17/04</strong></td><td>Sex</td><td>—</td><td>Reel D4 + Carrossel D4</td><td>—</td><td>—</td><td><span class="tag tag-phase1">Declaração</span></td></tr>
+    <tr><td><strong>18/04</strong></td><td>Sáb</td><td><span class="tag tag-batch">Escreve NL3+NL4</span></td><td>Reel D5 + Carrossel D5</td><td>—</td><td>Rascunho NL3 + NL4</td><td><span class="tag tag-phase1">Declaração</span></td></tr>
+    <tr><td><strong>19/04</strong></td><td>Dom</td><td><span class="tag tag-record">Revisa NL + Grava YT3+YT4</span></td><td>—</td><td>—</td><td>Finaliza NL3 + NL4</td><td><span class="tag tag-phase2">Autoridade</span></td></tr>
+    <tr><td><strong>20/04</strong></td><td>Seg</td><td><span class="tag tag-edit">Edita</span> <span class="tag tag-batch">Batch IG</span></td><td>—</td><td>Sobe YT3 + YT4</td><td>Agenda NL3 (terça) + NL4 (quinta)</td><td><span class="tag tag-phase2">Autoridade</span></td></tr>
+    <tr><td><strong>21/04</strong></td><td>Ter</td><td>—</td><td>Reel D6 + Carrossel D6</td><td>—</td><td><span style="color:#c8f542;font-weight:bold">🟢 NL3 — O Sistema</span></td><td><span class="tag tag-phase2">Autoridade</span></td></tr>
+    <tr><td><strong>22/04</strong></td><td>Qua</td><td>—</td><td>Reel D7 + Carrossel D7</td><td>—</td><td>—</td><td><span class="tag tag-phase2">Autoridade</span></td></tr>
+    <tr><td><strong>23/04</strong></td><td>Qui</td><td>—</td><td>Reel D8 + Carrossel D8</td><td>—</td><td><span style="color:#c8f542;font-weight:bold">🟢 NL4 — A Ideia</span></td><td><span class="tag tag-phase2">Autoridade</span></td></tr>
+    <tr><td><strong>24/04</strong></td><td>Sex</td><td>—</td><td>Reel D9 + Carrossel D9</td><td>—</td><td>—</td><td><span class="tag tag-phase2">Autoridade</span></td></tr>
+    <tr><td><strong>25/04</strong></td><td>Sáb</td><td><span class="tag tag-batch">Escreve NL5+NL6</span></td><td>Reel D10 + Carrossel D10</td><td>—</td><td>Rascunho NL5 + NL6</td><td><span class="tag tag-phase2">Autoridade</span></td></tr>
+    <tr><td><strong>26/04</strong></td><td>Dom</td><td><span class="tag tag-record">Revisa NL + Grava YT5+YT6</span></td><td>—</td><td>—</td><td>Finaliza NL5 + NL6</td><td><span class="tag tag-phase3">Conversão</span></td></tr>
+    <tr><td><strong>27/04</strong></td><td>Seg</td><td><span class="tag tag-edit">Edita</span> <span class="tag tag-batch">Batch IG</span></td><td>—</td><td>Sobe YT5 + YT6</td><td>Agenda NL5 (terça) + NL6 (quinta)</td><td><span class="tag tag-phase3">Conversão</span></td></tr>
+    <tr><td><strong>28/04</strong></td><td>Ter</td><td>—</td><td>Reel D11 + Carrossel D11</td><td>—</td><td><span style="color:#c8f542;font-weight:bold">🟢 NL5 — O Sistema</span></td><td><span class="tag tag-phase3">Conversão</span></td></tr>
+    <tr><td><strong>29/04</strong></td><td>Qua</td><td>—</td><td>Reel D12 + Carrossel D12</td><td>—</td><td>—</td><td><span class="tag tag-phase3">Conversão</span></td></tr>
+    <tr><td><strong>30/04</strong></td><td>Qui</td><td>—</td><td>Reel D13 + Carrossel D13</td><td>—</td><td><span style="color:#c8f542;font-weight:bold">🟢 NL6 — A Ideia</span></td><td><span class="tag tag-phase3">Conversão</span></td></tr>
+  </table>
+</div>
+
+<hr class="divider">
+
+<!-- CAPÍTULO 2: YOUTUBE -->
+<div class="chapter-header">
+  <div class="chapter-label">Capítulo 02</div>
+  <h2 class="chapter-title">YouTube —<br><span>6 Vídeos</span></h2>
+</div>
+
+<div class="section">
+  <div class="section-label">02 · Vídeos 12–15 minutos</div>
+  <h2 class="section-title">Roteiros & Estrutura</h2>
+  <p class="section-intro">Cada vídeo tem 12–15 min e segue a mesma estrutura: hook de 90s que prende, corpo com 3–4 blocos de conteúdo, encerramento com CTA para o produto. Thumbnail sempre: você em foco + texto bold + fundo preto ou verde.</p>
+
+  <!-- YT1 -->
+  <div class="content-card">
+    <div class="content-card-header yt">
+      <div class="card-day-info">
+        <div class="card-day">YouTube #1 · Grava 12/04 · Sobe 13/04</div>
+        <div class="card-title">Eu construo meu negócio sozinho com 150 agentes de IA — e você também pode</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-p2">Pilar 2 · Sistemas IA</span>
+        <span class="tag tag-tofu">ToFu</span>
+        <span class="tag tag-phase1">Declaração</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Objetivo do vídeo</div>
+        <div class="card-section-body">Apresentar o personagem, o produto e a premissa central do canal. Vídeo de fundação — quem você é, o que você faz, por que isso importa. Vai ser referenciado nos próximos meses.</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Thumbnail</div>
+        <div class="card-section-body">Foto sua com expressão de determinação · Fundo preto · Texto: <strong>"150 AGENTES. 1 PESSOA."</strong> em branco bold + <strong>"COMO?"</strong> em verde #c8f542</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Estrutura (12–15 min)</div>
+        <div class="yt-block"><div class="yt-time">0:00–1:30</div><div class="yt-desc"><strong>HOOK:</strong> "Eu acordo às 6h, treino, e quando abro o computador tenho um time de 150 especialistas esperando por mim. Eles não dormem, não pedem aumento e nunca reclamam do prazo. São meus agentes de IA." — Mostra a tela do sistema rapidamente. Corte rápido. Cria curiosidade imediata.</div></div>
+        <div class="yt-block"><div class="yt-time">1:30–4:00</div><div class="yt-desc"><strong>MINHA HISTÓRIA:</strong> Por que eu decidi construir um OPB. O momento de virada — perceber que equipe não é a resposta, sistema é. Como cheguei à ideia do 1PB Squad. Breve, honesto, sem exagero.</div></div>
+        <div class="yt-block"><div class="yt-time">4:00–8:00</div><div class="yt-desc"><strong>O QUE SÃO OS AGENTES:</strong> Explicar o conceito de forma simples. "Um agente de IA é como contratar um especialista que só faz uma coisa — e faz muito bem." Mostrar os 13 squads rapidamente. Dar 3 exemplos concretos de uso (copywriter, estrategista, operador).</div></div>
+        <div class="yt-block"><div class="yt-time">8:00–11:30</div><div class="yt-desc"><strong>DEMONSTRAÇÃO AO VIVO:</strong> Ativar 1 agente na tela em tempo real. Mostrar o comando, a resposta, o resultado. "Isso que acabou de acontecer levaria 1h se eu fosse fazer sozinho. Levou 4 minutos." Reação genuína.</div></div>
+        <div class="yt-block"><div class="yt-time">11:30–13:30</div><div class="yt-desc"><strong>PRÓXIMOS PASSOS + CTA:</strong> "Se você quer os 150 agentes, link na descrição. Se você quer aprender o sistema antes de comprar, fica no canal — toda semana tem vídeo novo." Inscrição + notificação.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YT2 -->
+  <div class="content-card">
+    <div class="content-card-header yt">
+      <div class="card-day-info">
+        <div class="card-day">YouTube #2 · Grava 12/04 · Sobe 13/04</div>
+        <div class="card-title">Por que você não precisa de equipe para ter um negócio de verdade</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-p1">Pilar 1 · Filosofia OPB</span>
+        <span class="tag tag-tofu">ToFu</span>
+        <span class="tag tag-phase1">Declaração</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Objetivo do vídeo</div>
+        <div class="card-section-body">Destruir a crença de que "negócio de verdade = equipe, escritório, CNPJ, investimento". Estabelecer a filosofia OPB. Vídeo de posicionamento — separa quem entende de quem não entende ainda.</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Thumbnail</div>
+        <div class="card-section-body">Foto sua correndo · Fundo verde #c8f542 · Texto preto bold: <strong>"EQUIPE É MITO"</strong> + subtexto menor: <strong>"o que ninguém te conta"</strong></div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Estrutura (12–15 min)</div>
+        <div class="yt-block"><div class="yt-time">0:00–1:30</div><div class="yt-desc"><strong>HOOK:</strong> "Me faz uma pergunta: quando você pensa em ter um negócio de sucesso, o que você vê na sua cabeça? Escritório cheio de gente, reuniões, funcionários... Esse filme foi colocado na sua cabeça por quem nunca construiu um negócio lucrativo de verdade."</div></div>
+        <div class="yt-block"><div class="yt-time">1:30–5:00</div><div class="yt-desc"><strong>O MITO DA EQUIPE:</strong> Por que a maioria das pessoas contrata cedo demais. O custo real de um funcionário (salário + encargos + gestão + tempo). Case: empresa com 10 pessoas vs. OPB com sistemas. Números reais.</div></div>
+        <div class="yt-block"><div class="yt-time">5:00–9:00</div><div class="yt-desc"><strong>O MODELO OPB:</strong> O que é one-person business de verdade. Dan Koe, Justin Welsh, Matt Gray como exemplos. A premissa: você é o produto, o sistema é o time. Como IA muda o cálculo completamente em 2026.</div></div>
+        <div class="yt-block"><div class="yt-time">9:00–12:00</div><div class="yt-desc"><strong>OS 3 SISTEMAS ESSENCIAIS:</strong> 1) Sistema de conteúdo (atrai). 2) Sistema de vendas (converte). 3) Sistema de entrega (retém). Como cada um pode ser automatizado com agentes de IA. Exemplos concretos.</div></div>
+        <div class="yt-block"><div class="yt-time">12:00–14:00</div><div class="yt-desc"><strong>ENCERRAMENTO:</strong> "A pergunta não é 'quando vou poder contratar alguém'. A pergunta é 'qual sistema vou construir primeiro'. CTA: próximo vídeo mostra exatamente como fazer isso."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YT3 -->
+  <div class="content-card">
+    <div class="content-card-header yt">
+      <div class="card-day-info">
+        <div class="card-day">YouTube #3 · Grava 19/04 · Sobe 20/04</div>
+        <div class="card-title">Ao vivo: ativando 5 agentes de IA para criar uma semana de conteúdo em 2 horas</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-p2">Pilar 2 · Sistemas IA</span>
+        <span class="tag tag-mofu">MoFu</span>
+        <span class="tag tag-phase2">Autoridade</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Objetivo do vídeo</div>
+        <div class="card-section-body">Demonstração prática em tela. O vídeo que gera mais saves e compartilhamentos — conteúdo acionável imediato. Audiência sai com algo que pode usar hoje.</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Thumbnail</div>
+        <div class="card-section-body">Print da tela com agente ativo + seu rosto no canto surpreso/animado · Texto: <strong>"2 HORAS → 7 POSTS"</strong> · Fundo preto</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Estrutura (12–15 min)</div>
+        <div class="yt-block"><div class="yt-time">0:00–1:00</div><div class="yt-desc"><strong>HOOK:</strong> "Vou criar toda a minha semana de conteúdo agora, ao vivo, na sua frente. 7 posts, 2 horas, 5 agentes de IA. Cronômetro ligado." — Mostra o cronômetro. Tensão imediata.</div></div>
+        <div class="yt-block"><div class="yt-time">1:00–3:00</div><div class="yt-desc"><strong>SETUP:</strong> Apresentar os 5 agentes que vai usar (copywriter, estrategista, hook writer, carrossel builder, caption writer). Explicar o papel de cada um em 30 segundos cada.</div></div>
+        <div class="yt-block"><div class="yt-time">3:00–10:00</div><div class="yt-desc"><strong>AO VIVO — O PROCESSO:</strong> Ativar cada agente em sequência. Mostrar o comando, a resposta, a edição mínima. "Isso eu teria levado 3 horas fazendo sozinho. Com o agente, 12 minutos." Comentar em tempo real.</div></div>
+        <div class="yt-block"><div class="yt-time">10:00–12:30</div><div class="yt-desc"><strong>RESULTADO FINAL:</strong> Mostrar os 7 posts prontos. "Isso é o que vai para o ar essa semana." Reflexão: o que IA faz bem, onde você ainda precisa revisar, qual é o nível de personalização necessário.</div></div>
+        <div class="yt-block"><div class="yt-time">12:30–14:30</div><div class="yt-desc"><strong>CTA:</strong> "Os agentes que usei estão no 1PB Squad. Link na descrição. Se quiser ver mais demonstrações assim, se inscreve — toda semana tem."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YT4 -->
+  <div class="content-card">
+    <div class="content-card-header yt">
+      <div class="card-day-info">
+        <div class="card-day">YouTube #4 · Grava 19/04 · Sobe 20/04</div>
+        <div class="card-title">A rotina do Atleta-Operador: como treinar às 6h mudou meu negócio</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-p3">Pilar 3 · Performance</span>
+        <span class="tag tag-tofu">ToFu</span>
+        <span class="tag tag-phase2">Autoridade</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Objetivo do vídeo</div>
+        <div class="card-section-body">Vídeo de humanização e diferenciação. Constrói o personagem Atleta-Operador. Alta virabilidade fora do nicho de negócios — atinge público de performance, corrida, produtividade.</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Thumbnail</div>
+        <div class="card-section-body">Foto sua correndo de manhã (luz baixa/aurora) · Texto: <strong>"6H DA MANHÃ"</strong> grande + <strong>"o segredo que ninguém fala"</strong> menor · Fundo escuro orgânico</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Estrutura (12–15 min)</div>
+        <div class="yt-block"><div class="yt-time">0:00–1:30</div><div class="yt-desc"><strong>HOOK:</strong> Começa com vídeo/foto de você correndo às 6h. "Toda vez que eu pulo esse treino, meu negócio sente. Não é metáfora. É dado." — Cria curiosidade sobre a conexão.</div></div>
+        <div class="yt-block"><div class="yt-time">1:30–4:30</div><div class="yt-desc"><strong>A DESCOBERTA:</strong> Quando começou a treinar de manhã. O que mudou nos primeiros 30 dias (foco, energia, disciplina de execução). A conexão que percebeu entre consistência no treino e consistência no negócio.</div></div>
+        <div class="yt-block"><div class="yt-time">4:30–8:30</div><div class="yt-desc"><strong>OS 3 PARALELOS:</strong> 1) Ritmo bate sprint (corrida) = Sistema bate esforço (negócio). 2) Não esperar motivação para treinar = Não esperar inspiração para criar conteúdo. 3) Progressão gradual = Compounding de habilidades.</div></div>
+        <div class="yt-block"><div class="yt-time">8:30–11:30</div><div class="yt-desc"><strong>A ROTINA ATUAL:</strong> Hora a hora da manhã. Como os sistemas de IA entram na rotina (o que os agentes fazem enquanto você treina). Mostrar que OPB não é trabalhar mais — é trabalhar com arquitetura.</div></div>
+        <div class="yt-block"><div class="yt-time">11:30–14:00</div><div class="yt-desc"><strong>ENCERRAMENTO:</strong> "Você não precisa acordar às 6h. Você precisa de um sistema que trabalha enquanto você cuida de você. Isso é o que estou construindo — e você pode ver aqui toda semana."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YT5 -->
+  <div class="content-card">
+    <div class="content-card-header yt">
+      <div class="card-day-info">
+        <div class="card-day">YouTube #5 · Grava 26/04 · Sobe 27/04</div>
+        <div class="card-title">Os 5 agentes de IA que todo solopreneur precisa ativar hoje</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-p2">Pilar 2 · Sistemas IA</span>
+        <span class="tag tag-mofu">MoFu</span>
+        <span class="tag tag-phase3">Conversão</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Objetivo do vídeo</div>
+        <div class="card-section-body">Vídeo de conversão suave — apresenta o produto de forma orgânica via conteúdo útil. Alta intenção de compra. Audiência que chegou aqui pelos outros vídeos já está aquecida.</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Thumbnail</div>
+        <div class="card-section-body">Grid 2×2 de prints de agentes ativos + seu rosto no canto · Texto: <strong>"5 AGENTES"</strong> grande verde + <strong>"que mudaram meu OPB"</strong> · Fundo preto</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Estrutura (12–15 min)</div>
+        <div class="yt-block"><div class="yt-time">0:00–1:00</div><div class="yt-desc"><strong>HOOK:</strong> "Se eu tivesse que começar do zero hoje com apenas 5 agentes de IA, seriam exatamente esses. Vou explicar qual é, por que é essencial, e como ativá-lo em menos de 10 minutos."</div></div>
+        <div class="yt-block"><div class="yt-time">1:00–10:00</div><div class="yt-desc"><strong>OS 5 AGENTES (2 min cada):</strong> 1) Copywriter (gera hooks, captions, emails). 2) Estrategista de Conteúdo (pauta semana inteira). 3) Agente de Oferta (monta proposta/pitch). 4) Agente Financeiro (análise de números). 5) Agente de Atendimento (FAQ e follow-up). Para cada um: o que faz, comando de ativação ao vivo, exemplo de resultado.</div></div>
+        <div class="yt-block"><div class="yt-time">10:00–12:30</div><div class="yt-desc"><strong>COMO ELES TRABALHAM JUNTOS:</strong> Mostrar o fluxo: Estrategista → Copywriter → Caption → Post. "Isso é um mini-time funcionando em cadeia." Demonstração rápida do encadeamento.</div></div>
+        <div class="yt-block"><div class="yt-time">12:30–14:30</div><div class="yt-desc"><strong>CTA DIRETO:</strong> "Esses 5 fazem parte do 1PB Squad — 150 agentes organizados em 13 áreas do negócio. Se você quer o sistema completo, link na descrição. Tem também os outros 145." Humor leve. Link.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- YT6 -->
+  <div class="content-card">
+    <div class="content-card-header yt">
+      <div class="card-day-info">
+        <div class="card-day">YouTube #6 · Grava 26/04 · Sobe 27/04</div>
+        <div class="card-title">Mês 1 em público: números reais, erros reais, o que aprendi</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-p4">Pilar 4 · Prova & Processo</span>
+        <span class="tag tag-mofu">MoFu</span>
+        <span class="tag tag-phase3">Conversão</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Objetivo do vídeo</div>
+        <div class="card-section-body">Building in public — o vídeo mais autêntico do mês. Fecha o ciclo de abril com transparência total. Gera confiança profunda. Alta retenção e compartilhamento orgânico.</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Thumbnail</div>
+        <div class="card-section-body">Foto sua com expressão pensativa/honesta · Fundo creme · Texto preto bold: <strong>"MÊS 1: A VERDADE"</strong></div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Estrutura (12–15 min)</div>
+        <div class="yt-block"><div class="yt-time">0:00–1:30</div><div class="yt-desc"><strong>HOOK:</strong> "Há 18 dias eu publiquei o primeiro post deste canal. Hoje vou te mostrar exatamente o que aconteceu — seguidores, visualizações, vendas, e os dois erros que quase me fizeram desistir na semana 1."</div></div>
+        <div class="yt-block"><div class="yt-time">1:30–5:00</div><div class="yt-desc"><strong>OS NÚMEROS:</strong> Seguidores ganhos. Visualizações por vídeo. Posts de melhor performance. Taxa de engajamento. Primeiras vendas ou leads. Dados reais — bons e ruins.</div></div>
+        <div class="yt-block"><div class="yt-time">5:00–8:30</div><div class="yt-desc"><strong>OS ERROS:</strong> 2–3 erros específicos cometidos. O que aconteceu, por que aconteceu, o que mudou. Honestidade total. "Esse carrossel que achei que ia bombar, não teve nem 50 likes. Aqui está o porquê."</div></div>
+        <div class="yt-block"><div class="yt-time">8:30–11:30</div><div class="yt-desc"><strong>O QUE FUNCIONOU:</strong> Os posts com melhor performance e por quê. Padrões identificados. O papel dos agentes de IA na operação do mês. Tempo real investido vs. resultado.</div></div>
+        <div class="yt-block"><div class="yt-time">11:30–14:30</div><div class="yt-desc"><strong>PRÓXIMO MÊS + CTA:</strong> O que muda em maio com base nos dados. "Transparência é minha vantagem competitiva. Se você quer acompanhar essa jornada, se inscreve. E se quiser o sistema que uso, link na descrição."</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- CAPÍTULO 3: INSTAGRAM FASE 1 -->
+<div class="chapter-header">
+  <div class="chapter-label">Capítulo 03 · 14 a 18 de Abril</div>
+  <h2 class="chapter-title">Fase 1 —<br><span>Declaração</span></h2>
+</div>
+
+<div class="section">
+  <div class="section-label">ToFu · Quem eu sou e o que defendo</div>
+  <h2 class="section-title">5 dias · 10 posts</h2>
+  <p class="section-intro">A primeira semana é sobre declarar seu posicionamento ao mundo. Não vender, não ensinar — existir com intenção. Cada post responde: "quem é esse cara e por que devo seguir?"</p>
+
+  <!-- D1 -->
+  <div class="content-card">
+    <div class="content-card-header phase1">
+      <div class="card-day-info">
+        <div class="card-day">Dia 1 · Terça 14/04 · Reel</div>
+        <div class="card-title">Eu construo meu negócio inteiro sozinho. Com IA. Deixa eu te mostrar como.</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-reel">Reel 30–45s</span>
+        <span class="tag tag-p2">Pilar 2</span>
+        <span class="tag tag-tofu">ToFu</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Hook (0–3s)</div>
+        <div class="hook-box">"Eu tenho 150 funcionários. Nenhum deles recebe salário."</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text"><strong>HOOK:</strong> "Eu tenho 150 funcionários. Nenhum deles recebe salário." — fala direto pra câmera, confiante.</div></div>
+        <div class="script-line"><div class="script-time">[3–10s]</div><div class="script-text">Corte rápido mostrando a tela do Claude Code com agentes ativos. Voz: "São agentes de IA. E eles rodam meu negócio enquanto eu faço isso:" — corte para você correndo.</div></div>
+        <div class="script-line"><div class="script-time">[10–25s]</div><div class="script-text">Volta pra câmera: "Copywriter, estrategista, agente financeiro, criador de conteúdo — cada um faz uma coisa e faz muito bem. Isso é o 1PB Squad. 150 agentes, 13 áreas do negócio, uma pessoa."</div></div>
+        <div class="script-line"><div class="script-time">[25–35s]</div><div class="script-text"><strong>CTA:</strong> "Fica aqui. Toda semana mostro o sistema ao vivo." — aponta para botão de seguir ou olha pro lado (direção do botão).</div></div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Caption</div>
+        <div class="card-section-body">One-person business não é limitação. É escolha. Eu escolhi construir com sistemas, não com equipe. Essa semana começo a mostrar tudo. Segue pra não perder. // #onepersonbusiness #agentesia #solopreneur</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- D1 CARROSSEL -->
+  <div class="content-card">
+    <div class="content-card-header phase1">
+      <div class="card-day-info">
+        <div class="card-day">Dia 1 · Terça 14/04 · Carrossel</div>
+        <div class="card-title">Por que eu nunca vou contratar um funcionário (e o que faço em vez disso)</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-carrossel">Carrossel 7 slides</span>
+        <span class="tag tag-p1">Pilar 1</span>
+        <span class="tag tag-tofu">ToFu</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA (Template A · fundo preto):</strong> "Por que eu nunca vou contratar um funcionário" + subtexto cinza: "e o que faço em vez disso"</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>PERSPECTIVA:</strong> "Todo mundo me diz: 'quando você vai contratar alguém?' Como se ter funcionário fosse o marco de sucesso. Não é." Fundo creme.</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>#1 — O custo real:</strong> "Um funcionário custa R$3–5k/mês. Com encargos, gestão e treinamento: R$6–8k. Um agente de IA: R$0 a mais."</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>#2 — O tempo de gestão:</strong> "Gerenciar pessoas é um trabalho por si só. Solopreneur que contrata cedo não escala — divide atenção."</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>#3 — A alternativa:</strong> "Sistemas > pessoas. Agentes de IA fazem o trabalho repetível. Você faz o trabalho que só você pode fazer."</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>#4 — A minha operação:</strong> "Copywriter, estrategista, financeiro, atendimento — todos são agentes. Eu faço estratégia, relacionamento e produto."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>CTA (Template D · fundo preto):</strong> "Você não precisa de equipe. Precisa do sistema certo." // Comenta SQUAD e te mando os 150 agentes.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D2 -->
+  <div class="content-card">
+    <div class="content-card-header phase1">
+      <div class="card-day-info">
+        <div class="card-day">Dia 2 · Quarta 15/04 · Reel</div>
+        <div class="card-title">Na corrida, ritmo bate sprint. Em negócio, sistema bate esforço.</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-reel">Reel 30–40s</span>
+        <span class="tag tag-p3">Pilar 3</span>
+        <span class="tag tag-tofu">ToFu</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Hook (0–3s)</div>
+        <div class="hook-box">"Aprendi mais sobre negócio correndo do que lendo livro."</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">Filmado correndo ou pós-treino. Hook falado: "Aprendi mais sobre negócio correndo do que lendo livro."</div></div>
+        <div class="script-line"><div class="script-time">[3–20s]</div><div class="script-text">"Na corrida você aprende que motivação é mentira. Você não espera estar animado pra treinar. Você tem um plano e segue. Negócio é a mesma coisa. Os meus sistemas rodam com ou sem inspiração."</div></div>
+        <div class="script-line"><div class="script-time">[20–35s]</div><div class="script-text">"Ritmo bate sprint. Consistência bate intensidade. E IA é o treino que nunca para." CTA: "Segue pra ver o sistema ao vivo."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase1">
+      <div class="card-day-info">
+        <div class="card-day">Dia 2 · Quarta 15/04 · Carrossel</div>
+        <div class="card-title">5 lições que a corrida me ensinou sobre construir um negócio sozinho</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-carrossel">Carrossel 7 slides</span>
+        <span class="tag tag-p3">Pilar 3</span>
+        <span class="tag tag-tofu">ToFu</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "5 lições que a corrida me ensinou sobre construir um negócio sozinho" · Foto sua correndo ao fundo, texto sobreposto bold</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>#1 — Motivação é mentira:</strong> "Ninguém acorda animado pra treinar todo dia. Quem treina todo dia tem um sistema, não força de vontade."</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>#2 — Ritmo bate sprint:</strong> "O corredor que vai rápido demais no início não termina a prova. O empreendedor que esforça demais queima antes de escalar."</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>#3 — Progressão > perfeição:</strong> "5km hoje, 7km semana que vem. Um agente ativo hoje, três na próxima semana. Compounding funciona nos dois."</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>#4 — Recuperação é parte do treino:</strong> "Dia de descanso não é fraqueza. Sistema automatizado não é preguiça. Ambos são estratégia."</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>#5 — O percurso é o produto:</strong> "Você não corre para chegar. Você corre para ser quem corre. Construir OPB não é chegar ao milhão — é ser quem construiu."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>CTA:</strong> "Atleta e operador. A mesma disciplina, campos diferentes." // Salva esse post pra lembrar quando a motivação faltar.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D3 -->
+  <div class="content-card">
+    <div class="content-card-header phase1">
+      <div class="card-day-info">
+        <div class="card-day">Dia 3 · Quinta 16/04 · Reel</div>
+        <div class="card-title">O que é o 1PB Squad — explicado em 45 segundos</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-reel">Reel 45s</span>
+        <span class="tag tag-p2">Pilar 2</span>
+        <span class="tag tag-tofu">ToFu</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Hook (0–3s)</div>
+        <div class="hook-box">"E se você tivesse 150 especialistas prontos para trabalhar agora?"</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">HOOK falado para câmera. Expressão de convite.</div></div>
+        <div class="script-line"><div class="script-time">[3–15s]</div><div class="script-text">"O 1PB Squad é um sistema de 150 agentes de IA organizados em 13 áreas — copy, estratégia, financeiro, conteúdo, design... Você ativa no Claude, dá um comando, e o agente faz o trabalho."</div></div>
+        <div class="script-line"><div class="script-time">[15–30s]</div><div class="script-text">Mostra tela rápida: ativa um agente, mostra resposta. "Isso. Em 2 minutos."</div></div>
+        <div class="script-line"><div class="script-time">[30–45s]</div><div class="script-text">"É o sistema que uso pra rodar meu negócio sozinho. Link na bio pra conhecer." CTA direto.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase1">
+      <div class="card-day-info">
+        <div class="card-day">Dia 3 · Quinta 16/04 · Carrossel</div>
+        <div class="card-title">Os 13 squads de IA que cobrem tudo que um negócio precisa</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-carrossel">Carrossel 8 slides</span>
+        <span class="tag tag-p2">Pilar 2</span>
+        <span class="tag tag-tofu">ToFu</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "150 agentes. 13 squads. 1 pessoa." · Fundo preto · Subtexto verde: "tudo que seu negócio precisa"</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>PERSPECTIVA:</strong> "Um negócio precisa de copy, estratégia, financeiro, conteúdo, dados, design... e mais. Normalmente você contrata pessoas pra isso. Ou ignora. Agora tem uma terceira opção."</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>Squads 1–4:</strong> Copy (23 agentes) · Hormozi (16) · Brand (15) · Traffic (16) — nome + ícone + descrição 1 linha cada</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>Squads 5–8:</strong> Advisory Board (11) · C-Level (6) · Design (8) · Data (7)</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>Squads 9–13:</strong> Solo (6) · Storytelling (12) · Claude Code (8) · Cybersecurity (15) · Movement (7)</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>Como funciona:</strong> "Você abre o Claude, digita /copy:eugene-schwartz, descreve o que precisa. Em 30 segundos tem um copywriter de nível mundial trabalhando pra você."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>Qual é o preço disso:</strong> "Contratar esses 150 especialistas custaria R$200k+/mês. O 1PB Squad custa o preço de uma refeição." (Não dá o preço — gera curiosidade.)</div></li>
+          <li><div class="slide-num">8</div><div class="slide-text"><strong>CTA:</strong> "Link na bio. Ou comenta SQUAD que te mando os detalhes no direct."</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D4 -->
+  <div class="content-card">
+    <div class="content-card-header phase1">
+      <div class="card-day-info">
+        <div class="card-day">Dia 4 · Sexta 17/04 · Reel</div>
+        <div class="card-title">Minha manhã: 6h treino, 8h negócio, 0 funcionários</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-reel">Reel 45–60s · Day in the life</span>
+        <span class="tag tag-p3">Pilar 3</span>
+        <span class="tag tag-tofu">ToFu</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Hook (0–3s)</div>
+        <div class="hook-box">"Minha rotina: acordo às 6, treino, abro o computador e meu time já trabalhou."</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">HOOK falado, câmera próxima, tom natural.</div></div>
+        <div class="script-line"><div class="script-time">[3–20s]</div><div class="script-text">Sequência de clips curtos: tênis sendo calçado → rua cedo → correndo → de volta em casa → abrindo laptop. Narração em off: "6h treino. 7h30 café. 8h o agente de conteúdo já gerou 5 ideias de post, o copywriter escreveu 3 versões de headline, e o estrategista analisou meu funil."</div></div>
+        <div class="script-line"><div class="script-time">[20–40s]</div><div class="script-text">"Não sou disciplinado. Tenho arquitetura. A diferença é que arquitetura não depende de como eu acordei."</div></div>
+        <div class="script-line"><div class="script-time">[40–55s]</div><div class="script-text">CTA: "Se quer ver o sistema por dentro, segue. Toda segunda tem novo conteúdo."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase1">
+      <div class="card-day-info">
+        <div class="card-day">Dia 4 · Sexta 17/04 · Carrossel</div>
+        <div class="card-title">A diferença entre trabalhar NO negócio e trabalhar PELO negócio</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-carrossel">Carrossel 7 slides</span>
+        <span class="tag tag-p1">Pilar 1</span>
+        <span class="tag tag-tofu">ToFu</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "Trabalhar NO negócio vs. trabalhar PELO negócio" · Fundo preto · "A distinção que muda tudo"</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>PERSPECTIVA:</strong> "A maioria trabalha 60h por semana PELO negócio — fazendo tarefas que o negócio precisa. Poucos trabalham NO negócio — tomando decisões que movem a agulha."</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>Trabalhar PELO negócio:</strong> Fazer tarefas operacionais, responder emails, criar post, fazer planilha. Necessário — mas não deve ser você.</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>Trabalhar NO negócio:</strong> Definir estratégia, criar oferta, construir relacionamentos, tomar decisões de alto impacto. Só você pode fazer isso.</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>O que os agentes de IA mudam:</strong> "Agentes fazem o PELO. Você fica no NO. Essa é a virada."</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>Teste prático:</strong> "Olha sua agenda de ontem. Quanto tempo foi em tarefas que um agente poderia ter feito? Se passou de 40%, você está preso no modo errado."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>CTA:</strong> "Trabalhe menos NO negócio. Construa mais O negócio." // Comenta quanto tempo você gasta em tarefas repetíveis.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D5 -->
+  <div class="content-card">
+    <div class="content-card-header phase1">
+      <div class="card-day-info">
+        <div class="card-day">Dia 5 · Sábado 18/04 · Reel</div>
+        <div class="card-title">Semana 1 em público — o que publiquei, o que aprendi</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-reel">Reel 45s · Building in public</span>
+        <span class="tag tag-p4">Pilar 4</span>
+        <span class="tag tag-tofu">ToFu</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Hook (0–3s)</div>
+        <div class="hook-box">"Semana 1 feita. Números reais, sem esconder."</div>
+      </div>
+      <div class="card-section">
+        <div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">HOOK direto. Tom honesto, não performático.</div></div>
+        <div class="script-line"><div class="script-time">[3–30s]</div><div class="script-text">"Publiquei X posts, X reels, X vídeos no YouTube. O que mais engajou foi [post X]. O que menos funcionou foi [post Y]. O que vou mudar na próxima semana: [ajuste específico]."</div></div>
+        <div class="script-line"><div class="script-time">[30–45s]</div><div class="script-text">"Building in public significa mostrar o processo real. Segue pra acompanhar a jornada."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase1">
+      <div class="card-day-info">
+        <div class="card-day">Dia 5 · Sábado 18/04 · Carrossel</div>
+        <div class="card-title">Como ativo um agente de IA em menos de 2 minutos — passo a passo</div>
+      </div>
+      <div class="card-tags">
+        <span class="tag tag-carrossel">Carrossel 8 slides · Tutorial</span>
+        <span class="tag tag-p2">Pilar 2</span>
+        <span class="tag tag-mofu">MoFu</span>
+      </div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section">
+        <div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "Como ativo um agente de IA em 2 minutos" · Fundo creme · número "2 min" grande em verde</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>O QUE VOCÊ PRECISA:</strong> "Apenas o Claude (claude.ai) e o arquivo do agente. Sem código, sem configuração técnica, sem desenvolvedor."</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>PASSO 1:</strong> "Abra o Claude e crie um novo projeto." [print de tela simplificado]</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>PASSO 2:</strong> "Cole o arquivo do agente nas instruções do projeto. Isso diz ao Claude quem ele é."</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>PASSO 3:</strong> "Dê o primeiro comando. Exemplo: 'Analise minha oferta atual e me diz o que está fraco.'"</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>RESULTADO:</strong> "O agente responde como um especialista na área — com a personalidade, os frameworks e o estilo de análise certos."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>DICA:</strong> "Quanto mais contexto você dá, melhor a resposta. Trate como um briefing para um profissional real."</div></li>
+          <li><div class="slide-num">8</div><div class="slide-text"><strong>CTA:</strong> "Comenta SQUAD e te mando o guia completo de ativação dos 150 agentes."</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CAPÍTULO 4: FASE 2 -->
+<div class="chapter-header">
+  <div class="chapter-label">Capítulo 04 · 21 a 25 de Abril</div>
+  <h2 class="chapter-title">Fase 2 —<br><span>Autoridade</span></h2>
+</div>
+
+<div class="section">
+  <div class="section-label">ToFu/MoFu · Sistemas, frameworks, prova</div>
+  <h2 class="section-title">5 dias · 10 posts</h2>
+  <p class="section-intro">Segunda semana aprofunda os sistemas. Mostra como funciona na prática, com evidência e processo. A audiência que sobreviveu à primeira semana está qualificada — agora você entrega profundidade.</p>
+
+  <!-- D6 -->
+  <div class="content-card">
+    <div class="content-card-header phase2">
+      <div class="card-day-info">
+        <div class="card-day">Dia 6 · Terça 21/04 · Reel</div>
+        <div class="card-title">Ao vivo: o agente de copywriting escreve um hook melhor que eu</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-reel">Reel 45–60s</span><span class="tag tag-p2">Pilar 2</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Hook</div><div class="hook-box">"Vou pedir pra um agente de IA escrever um hook pra mim. Ao vivo. Agora."</div></div>
+      <div class="card-section"><div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">HOOK falado, câmera de tela ligada.</div></div>
+        <div class="script-line"><div class="script-time">[3–30s]</div><div class="script-text">Mostra na tela: ativa o agente Eugene Schwartz, digita o briefing do produto, mostra a resposta com 5 hooks diferentes. "Olha esse #3. Eu não ia escrever assim. É melhor do que o meu."</div></div>
+        <div class="script-line"><div class="script-time">[30–50s]</div><div class="script-text">"Isso é o que acontece quando você para de tentar fazer tudo sozinho e começa a trabalhar com os sistemas certos. Comenta SQUAD pra eu te mandar esse agente."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase2">
+      <div class="card-day-info">
+        <div class="card-day">Dia 6 · Terça 21/04 · Carrossel</div>
+        <div class="card-title">O sistema que uso para criar 30 posts em 2 horas toda segunda-feira</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-carrossel">Carrossel 8 slides</span><span class="tag tag-p2">Pilar 2</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "30 posts. 2 horas. Como?" · Fundo preto</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>O PROBLEMA:</strong> "Criar conteúdo todo dia é insustentável sem sistema. Quem tenta fazer 'no feeling' esgota em 2 semanas."</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>PASSO 1 — 1 tema âncora:</strong> "Toda semana começo com 1 grande ideia. Pode ser insight do treino, resultado do negócio ou aprendizado de um cliente."</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>PASSO 2 — Agente Estrategista:</strong> "Dou a ideia âncora pro agente. Ele gera 10 ângulos diferentes para o mesmo tema."</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>PASSO 3 — Agente Copywriter:</strong> "Para cada ângulo, o agente escreve o hook, o corpo e o CTA. Eu reviso e personalizo com minha voz."</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>PASSO 4 — Design em batch:</strong> "Abro o Canva com os templates prontos. Aplico o conteúdo. 4 minutos por carrossel."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>PASSO 5 — Agendar tudo:</strong> "Uso o Later ou Meta Business Suite. Toda a semana agendada em 20 minutos."</div></li>
+          <li><div class="slide-num">8</div><div class="slide-text"><strong>CTA:</strong> "Consistência não é força de vontade. É sistema." // Salva esse post — você vai usar.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D7 -->
+  <div class="content-card">
+    <div class="content-card-header phase2">
+      <div class="card-day-info">
+        <div class="card-day">Dia 7 · Quarta 22/04 · Reel</div>
+        <div class="card-title">3 erros que todo solopreneur comete com IA (e como evitar)</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-reel">Reel 45s</span><span class="tag tag-p2">Pilar 2</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Hook</div><div class="hook-box">"A maioria usa IA errado. E o resultado é medíocre."</div></div>
+      <div class="card-section"><div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">HOOK direto, tom sério.</div></div>
+        <div class="script-line"><div class="script-time">[3–35s]</div><div class="script-text">"Erro 1: usar o ChatGPT como Google — pergunta solta, resposta genérica. Erro 2: não dar contexto — resultado sem personalidade. Erro 3: não ter agentes especializados — um agente generalista não substitui um especialista." Cada erro: 1 frase + solução em 1 frase.</div></div>
+        <div class="script-line"><div class="script-time">[35–45s]</div><div class="script-text">CTA: "Comenta ERRO e te mando o guia de como usar agentes certos."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase2">
+      <div class="card-day-info">
+        <div class="card-day">Dia 7 · Quarta 22/04 · Carrossel</div>
+        <div class="card-title">O Mastery Stack: a ordem certa para construir um OPB que escala</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-carrossel">Carrossel 8 slides</span><span class="tag tag-p1">Pilar 1</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "A ordem certa para construir um OPB" · Fundo creme · "Mastery Stack"</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>O ERRO MAIS COMUM:</strong> "A maioria tenta começar pelo passo 4 (ganhar dinheiro) sem passar pelos passos 1, 2 e 3. Resultado: vende antes de ter credibilidade."</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>PASSO 1 — Habilidade:</strong> "Identifique 2–3 habilidades na interseção de: o que você é bom, o que o mercado paga, o que você genuinamente quer desenvolver."</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>PASSO 2 — Projeto:</strong> "Construa algo público que demonstre a habilidade. Produto, case, processo documentado. Prova que afirmação não cria."</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>PASSO 3 — Audiência:</strong> "Compartilhe o projeto. Ensine o que aprende. Documente o processo. A audiência que cresce ao redor da sua expertise é seu ativo mais valioso."</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>PASSO 4 — Receita:</strong> "Com audiência existente: serviços → produtos digitais → comunidade/assinatura. Na ordem de menor para maior alavancagem."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>ONDE EU ESTOU:</strong> "Habilidade ✓, Projeto ✓ (1PB Squad), Audiência (construindo agora), Receita (primeiros resultados). Acompanha a jornada aqui."</div></li>
+          <li><div class="slide-num">8</div><div class="slide-text"><strong>CTA:</strong> "Em qual passo você está? Comenta." ManyChat ativado para engajamento.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D8 -->
+  <div class="content-card">
+    <div class="content-card-header phase2">
+      <div class="card-day-info">
+        <div class="card-day">Dia 8 · Quinta 23/04 · Reel</div>
+        <div class="card-title">IA não vai te substituir. Vai substituir quem não sabe usar IA.</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-reel">Reel 30s · Quote</span><span class="tag tag-p1">Pilar 1</span><span class="tag tag-tofu">ToFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Hook</div><div class="hook-box">"IA não vai te substituir. Vai substituir quem não sabe usar IA."</div></div>
+      <div class="card-section"><div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">Frase na tela + você falando. Corte impactante.</div></div>
+        <div class="script-line"><div class="script-time">[3–20s]</div><div class="script-text">"Não é sobre aprender programação ou virar técnico. É sobre aprender a trabalhar com agentes como colaboradores — dar contexto, revisar, dirigir. Quem faz isso multiplica output sem multiplicar horas."</div></div>
+        <div class="script-line"><div class="script-time">[20–30s]</div><div class="script-text">CTA simples: "Se inscreve. Toda semana mostro como."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase2">
+      <div class="card-day-info">
+        <div class="card-day">Dia 8 · Quinta 23/04 · Carrossel</div>
+        <div class="card-title">5 agentes do 1PB Squad que uso toda semana (e o que cada um faz)</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-carrossel">Carrossel 7 slides</span><span class="tag tag-p2">Pilar 2</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "5 agentes que uso TODA semana" · Fundo preto · Verde: "e o que cada um faz"</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>#1 — Eugene Schwartz (Copy):</strong> "Escreve headlines com os 5 níveis de consciência. Diagnóstica o nível de awareness do meu público antes de escrever uma linha."</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>#2 — Solo Strategist:</strong> "Define a direção estratégica da semana. Prioriza o que tem mais alavancagem. Me tira da operação e coloca na estratégia."</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>#3 — Hormozi Offers:</strong> "Analisa minhas ofertas pela Value Equation. Me diz o que está fraco e como empilhar valor sem reduzir preço."</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>#4 — Solo Creator:</strong> "Gera pautas de conteúdo, hooks e estrutura de carrosseis. Base do meu sistema de conteúdo semanal."</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>#5 — Data Analyst:</strong> "Analisa os números do negócio e do conteúdo. Me diz o que está funcionando antes que eu precise adivinhar."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>CTA:</strong> "Esses 5 estão no 1PB Squad junto com outros 145. Comenta SQUAD."</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D9 -->
+  <div class="content-card">
+    <div class="content-card-header phase2">
+      <div class="card-day-info">
+        <div class="card-day">Dia 9 · Sexta 24/04 · Reel</div>
+        <div class="card-title">Quanto tempo de trabalho um agente de IA me economiza por semana</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-reel">Reel 45s · Prova</span><span class="tag tag-p4">Pilar 4</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Hook</div><div class="hook-box">"Fiz a conta. Os agentes me economizam 18 horas por semana. Mostra como:"</div></div>
+      <div class="card-section"><div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">HOOK com número específico. Tom de revelação.</div></div>
+        <div class="script-line"><div class="script-time">[3–35s]</div><div class="script-text">Mostra na tela (ou fala com texto animado): "Copy: 4h → 30min. Pauta de conteúdo: 2h → 15min. Análise financeira: 3h → 20min. Estrutura de carrossel: 1h → 10min. Total salvo por semana: 18h." Voz: "Esse tempo vai pra estratégia, treino e produto."</div></div>
+        <div class="script-line"><div class="script-time">[35–45s]</div><div class="script-text">CTA: "Comenta TEMPO que te mando o mapa de quais agentes economizam mais horas."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase2">
+      <div class="card-day-info">
+        <div class="card-day">Dia 9 · Sexta 24/04 · Carrossel</div>
+        <div class="card-title">Como construir um flywheel de conteúdo que cresce sozinho</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-carrossel">Carrossel 8 slides</span><span class="tag tag-p2">Pilar 2</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "O flywheel de conteúdo que trabalha enquanto você dorme" · Fundo creme</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>O QUE É UM FLYWHEEL:</strong> "Um sistema onde cada elemento alimenta o próximo — criando momentum que cresce sem esforço adicional."</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>ETAPA 1 — Conteúdo:</strong> "Você ensina o que sabe. Atrai quem precisa do que você sabe."</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>ETAPA 2 — Audiência:</strong> "A audiência confia porque o conteúdo consistentemente entrega valor real."</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>ETAPA 3 — Oferta:</strong> "Audiência que confia compra porque já acredita no que você ensina."</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>ETAPA 4 — Resultados:</strong> "Resultados dos clientes viram novo conteúdo. O ciclo recomeça mais rápido."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>ONDE A IA ENTRA:</strong> "Agentes mantém o flywheel girando mesmo quando você não está na frente do computador. Consistência sem esforço manual."</div></li>
+          <li><div class="slide-num">8</div><div class="slide-text"><strong>CTA:</strong> "Qual etapa do flywheel você está construindo agora? Comenta."</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D10 -->
+  <div class="content-card">
+    <div class="content-card-header phase2">
+      <div class="card-day-info">
+        <div class="card-day">Dia 10 · Sábado 25/04 · Reel</div>
+        <div class="card-title">O que eu faria diferente se estivesse começando hoje</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-reel">Reel 45–60s</span><span class="tag tag-p4">Pilar 4</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Hook</div><div class="hook-box">"Se eu estivesse começando hoje, faria exatamente o oposto do que fiz."</div></div>
+      <div class="card-section"><div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">Hook provocador, câmera próxima.</div></div>
+        <div class="script-line"><div class="script-time">[3–40s]</div><div class="script-text">"Começaria com agentes de IA antes de qualquer outra coisa. Não tentaria criar tudo do zero. Publicaria em público desde o dia 1 — não esperaria ter algo 'perfeito'. Escolheria 1 plataforma e iria fundo nela antes de diversificar."</div></div>
+        <div class="script-line"><div class="script-time">[40–55s]</div><div class="script-text">"Você está começando agora. Aproveite — você começa com vantagem que eu não tive." CTA: "Comenta o que você mudaria no seu começo."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase2">
+      <div class="card-day-info">
+        <div class="card-day">Dia 10 · Sábado 25/04 · Carrossel</div>
+        <div class="card-title">Semana 2 em público: o que funcionou, o que ajustei</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-carrossel">Carrossel 6 slides</span><span class="tag tag-p4">Pilar 4</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "Semana 2 em público — números reais" · Fundo preto</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>OS NÚMEROS:</strong> Seguidores ganhos na semana. Post com mais engajamento. Vídeo com mais views. Primeiros comentários sobre o produto.</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>O QUE FUNCIONOU:</strong> Formato, tema ou hook que teve melhor resultado e por quê.</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>O QUE AJUSTEI:</strong> O que não funcionou como esperado e o que mudou na abordagem.</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>PRÓXIMA SEMANA:</strong> O foco da semana 3 e o que vai ser diferente.</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>CTA:</strong> "Building in public porque acredito que processo aberto constrói mais confiança que resultado perfeito." // Acompanha.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CAPÍTULO 5: FASE 3 -->
+<div class="chapter-header">
+  <div class="chapter-label">Capítulo 05 · 28 a 30 de Abril</div>
+  <h2 class="chapter-title">Fase 3 —<br><span>Conversão Suave</span></h2>
+</div>
+
+<div class="section">
+  <div class="section-label">MoFu/BoFu · Confiança consolidada + CTA direto</div>
+  <h2 class="section-title">3 dias · 6 posts</h2>
+  <p class="section-intro">Última semana do mês. A audiência que chegou aqui já recebeu 2 semanas de valor real. Agora você pode falar do produto diretamente — sem pitch forçado, com naturalidade e prova consolidada.</p>
+
+  <!-- D11 -->
+  <div class="content-card">
+    <div class="content-card-header phase3">
+      <div class="card-day-info">
+        <div class="card-day">Dia 11 · Terça 28/04 · Reel</div>
+        <div class="card-title">Quem é o 1PB Squad pra você — e pra quem não é</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-reel">Reel 45s</span><span class="tag tag-p5">Pilar 5</span><span class="tag tag-bofu">BoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Hook</div><div class="hook-box">"O 1PB Squad não é pra todo mundo. Deixa eu te dizer pra quem é."</div></div>
+      <div class="card-section"><div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">HOOK qualificador — filtra e atrai ao mesmo tempo.</div></div>
+        <div class="script-line"><div class="script-time">[3–30s]</div><div class="script-text">"É pra quem já tem ou está construindo um negócio solo. Que usa o Claude ou quer começar. Que prefere sistemas a improviso. Que quer trabalhar menos horas com mais resultado." Pausa. "Não é pra quem ainda não tem clareza do que quer construir — pra esses, primeiro assiste o canal até ter."</div></div>
+        <div class="script-line"><div class="script-time">[30–45s]</div><div class="script-text">CTA: "Se você é pra quem eu descrevi, link na bio. Se não é ainda, fica — o canal é gratuito e vai te levar lá."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase3">
+      <div class="card-day-info">
+        <div class="card-day">Dia 11 · Terça 28/04 · Carrossel</div>
+        <div class="card-title">O que você recebe quando ativa o 1PB Squad hoje</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-carrossel">Carrossel 8 slides</span><span class="tag tag-p5">Pilar 5</span><span class="tag tag-bofu">BoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "O que você recebe quando ativa o 1PB Squad" · Fundo preto · Verde: "150 agentes. 13 squads."</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>O PRODUTO:</strong> "150 agentes de IA organizados em 13 squads cobrindo todas as áreas do seu negócio. Funciona com o Claude — sem código, sem configuração técnica."</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>SQUAD DE COPY:</strong> "23 agentes. Eugene Schwartz, Gary Halbert, David Ogilvy, Claude Hopkins... os maiores copywriters da história trabalhando para você."</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>SQUAD HORMOZI:</strong> "16 agentes. Ofertas, precificação, leads, escalada — o sistema completo de Alex Hormozi disponível para o seu negócio."</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>+ 11 SQUADS:</strong> Advisory Board, Brand, C-Level, Claude Code, Cybersecurity, Data, Design, Movement, Solo, Storytelling, Traffic. Um time completo.</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>O MANUAL:</strong> "PDF completo de 160+ páginas documentando cada agente — quando usar, como usar, qual problema resolve."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>O QUE ISSO SUBSTITUI:</strong> "Copywriter freelancer. Consultor de estratégia. Analista financeiro. Designer de identidade. Ao mesmo tempo. Por uma fração do custo."</div></li>
+          <li><div class="slide-num">8</div><div class="slide-text"><strong>CTA DIRETO:</strong> "Link na bio. Ou comenta SQUAD e te mando os detalhes no direct."</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D12 -->
+  <div class="content-card">
+    <div class="content-card-header phase3">
+      <div class="card-day-info">
+        <div class="card-day">Dia 12 · Quarta 29/04 · Reel</div>
+        <div class="card-title">Depoimento real: o que mudou pra quem já usa o 1PB Squad</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-reel">Reel 45s · Prova social</span><span class="tag tag-p4">Pilar 4</span><span class="tag tag-bofu">BoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Hook</div><div class="hook-box">"Não vou falar do produto. Vou deixar quem usa falar."</div></div>
+      <div class="card-section"><div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">HOOK construtor de credibilidade.</div></div>
+        <div class="script-line"><div class="script-time">[3–35s]</div><div class="script-text">Lê ou mostra print de feedback/depoimento real de um comprador. Comenta brevemente: "Isso que ele/ela descreveu é exatamente o que eu queria criar — um sistema que funciona mesmo pra quem está começando."</div></div>
+        <div class="script-line"><div class="script-time">[35–45s]</div><div class="script-text">CTA: "Quer entrar? Link na bio."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase3">
+      <div class="card-day-info">
+        <div class="card-day">Dia 12 · Quarta 29/04 · Carrossel</div>
+        <div class="card-title">Perguntas reais de quem está na dúvida sobre o 1PB Squad</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-carrossel">Carrossel 7 slides · FAQ</span><span class="tag tag-p5">Pilar 5</span><span class="tag tag-bofu">BoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "Respondendo as dúvidas reais sobre o 1PB Squad" · Fundo creme</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>Q: "Precisa saber programar?"</strong> "Não. Se você sabe digitar um texto no WhatsApp, você sabe usar o 1PB Squad."</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>Q: "Funciona para qualquer tipo de negócio?"</strong> "Funciona para qualquer negócio digital solo — infoprodutos, consultoria, agência, freelancer, SaaS."</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>Q: "Precisa do Claude pago?"</strong> "A versão gratuita funciona. O Claude Pro (R$95/mês) desbloqueia mais contexto e velocidade — vale muito a pena."</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>Q: "Como recebo?"</strong> "Acesso imediato após compra. Arquivo + manual PDF + guia de ativação passo a passo."</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>Q: "O que diferencia do ChatGPT?"</strong> "ChatGPT é um generalista. Os agentes do 1PB Squad são especialistas — com personalidade, frameworks e foco em uma área específica do seu negócio."</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>CTA:</strong> "Alguma outra dúvida? Comenta aqui ou me manda direct." Link na bio para compra.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- D13 -->
+  <div class="content-card">
+    <div class="content-card-header phase3">
+      <div class="card-day-info">
+        <div class="card-day">Dia 13 · Quinta 30/04 · Reel</div>
+        <div class="card-title">Último dia de abril. Próximo nível começa agora.</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-reel">Reel 45s · Encerramento do mês</span><span class="tag tag-p4">Pilar 4</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Hook</div><div class="hook-box">"Abril acabou. Aqui está o que construí em 19 dias partindo do zero."</div></div>
+      <div class="card-section"><div class="card-section-title">Script</div>
+        <div class="script-line"><div class="script-time">[0–3s]</div><div class="script-text">HOOK com senso de conclusão e conquista.</div></div>
+        <div class="script-line"><div class="script-time">[3–35s]</div><div class="script-text">"6 vídeos no YouTube. 26 posts no Instagram. X seguidores. X vendas do 1PB Squad. X horas economizadas com agentes de IA." Pausa. "Não é sobre os números. É sobre o sistema que agora roda sozinho."</div></div>
+        <div class="script-line"><div class="script-time">[35–45s]</div><div class="script-text">CTA: "Maio vai ser diferente. Se inscreve no canal pra ver ao vivo."</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <div class="content-card-header phase3">
+      <div class="card-day-info">
+        <div class="card-day">Dia 13 · Quinta 30/04 · Carrossel</div>
+        <div class="card-title">Abril em números: tudo que construí em 19 dias com IA e sistemas</div>
+      </div>
+      <div class="card-tags"><span class="tag tag-carrossel">Carrossel 7 slides · Retrospectiva</span><span class="tag tag-p4">Pilar 4</span><span class="tag tag-mofu">MoFu</span></div>
+    </div>
+    <div class="content-card-body">
+      <div class="card-section"><div class="card-section-title">Slides</div>
+        <ul class="slides-list">
+          <li><div class="slide-num">1</div><div class="slide-text"><strong>CAPA:</strong> "Abril em números" · Fundo preto · Verde: "19 dias. Do zero ao sistema."</div></li>
+          <li><div class="slide-num">2</div><div class="slide-text"><strong>CONTEÚDO PRODUZIDO:</strong> Preencher com dados reais: X posts IG, X vídeos YT, X horas de produção/semana com o sistema batch.</div></li>
+          <li><div class="slide-num">3</div><div class="slide-text"><strong>AUDIÊNCIA:</strong> Seguidores ganhos. Taxa de engajamento média. Post com melhor performance.</div></li>
+          <li><div class="slide-num">4</div><div class="slide-text"><strong>PRODUTO:</strong> Primeiras vendas do 1PB Squad. Feedback recebido. O que vai melhorar.</div></li>
+          <li><div class="slide-num">5</div><div class="slide-text"><strong>OS AGENTES QUE MAIS USOU:</strong> Top 3 agentes do mês e o impacto de cada um em tempo economizado.</div></li>
+          <li><div class="slide-num">6</div><div class="slide-text"><strong>O MAIOR APRENDIZADO:</strong> Uma lição honesta do mês. Algo que mudou na forma de pensar ou operar.</div></li>
+          <li><div class="slide-num">7</div><div class="slide-text"><strong>MAIO:</strong> O que vem aí. "Segue pra não perder. E se ainda não tem o sistema, link na bio." CTA final do mês.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
